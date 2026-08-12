@@ -1,0 +1,15 @@
+@'
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+Content/
+Build/
+*.sln
+*.suo
+*.opensdf
+*.sdf
+*.VC.db
+*.VC.opendb
+.vs/
+'@ | Out-File -Encoding ascii .gitignore
