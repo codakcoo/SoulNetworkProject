@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 
 #include "Widget/Slot/InventoryType_SlotWidget.h"
@@ -25,7 +25,7 @@ void UInventoryType_SlotWidget::NativeConstruct()
 	//UpdatedSelect(false);
 }
 
-//Data·Î º¯Çü//
+//Dataï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½//
 void UInventoryType_SlotWidget::OnClicked()
 {
 	if (!SlotData.IsSet()) return;

@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 
 #include "Widget/Slot/ActionMenuWidget.h"
@@ -51,7 +51,7 @@ void UActionMenuWidget::NativeConstruct()
 	MenuSwitcher->SetActiveWidget(ActionMenu);
 }
 
-//Data·Î º¯Çü//
+//Dataï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½//
 void UActionMenuWidget::UpdateActionMenu(USlotWidget* InSlot)
 {
 	if (!InSlot)
@@ -88,7 +88,7 @@ void UActionMenuWidget::UpdateActionMenu(USlotWidget* InSlot)
 	}
 }
 
-//Ä«¿îÆ® ¸Þ´º ¾÷µ¥ÀÌÆ®//
+//Ä«ï¿½ï¿½Æ® ï¿½Þ´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®//
 void UActionMenuWidget::UpdatedCountWidget()
 {
 	FString CurrentString = FString::FromInt(CurrentCount) + " / " + FString::FromInt(CurrentSlot->SlotData.ItemCount);
@@ -99,7 +99,7 @@ void UActionMenuWidget::UpdatedCountWidget()
 }
 ///////////////////////
 
-//Ã¢ º¸ÀÓ, ¼û±è ÇÔ¼ö//
+//Ã¢ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½//
 void UActionMenuWidget::VisibilityActionMenu()
 {
 	PlayAnimation(OnAction);
@@ -114,7 +114,7 @@ void UActionMenuWidget::HiddenActionMenu()
 //////////////////////////
 
 
-//»ç¿ëÇÏ±â//
+//ï¿½ï¿½ï¿½ï¿½Ï±ï¿½//
 void UActionMenuWidget::UseClicked()
 {
 	if(!CurrentSlot->SlotData.IsSet()) return;
@@ -132,7 +132,7 @@ void UActionMenuWidget::UseClicked()
 	}
 }
 
-//¹ö¸®±â//
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½//
 void UActionMenuWidget::DropClicked()
 {
 	if (!CurrentSlot) return;
@@ -162,7 +162,7 @@ void UActionMenuWidget::DropClicked()
 	}
 }
 
-//ÆÄ±«ÇÏ±â//
+//ï¿½Ä±ï¿½ï¿½Ï±ï¿½//
 void UActionMenuWidget::DestroyClicked()
 {
 	if(!CurrentSlot) return;
@@ -192,7 +192,7 @@ void UActionMenuWidget::DestroyClicked()
 	}
 }
 
-//ÇÑ ¹ø¿¡ ¹ö¸®±â//
+//ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½//
 void UActionMenuWidget::DropAtOnceClicked()
 {
 	//if (APlayerHUD* OwnerHUD = Cast<APlayerHUD>(GetWorld()->GetFirstPlayerController()->GetHUD()))
@@ -209,7 +209,7 @@ void UActionMenuWidget::DropAtOnceClicked()
 	}
 }
 
-//ÇÑ ¹ø¿¡ ÆÄ±«ÇÏ±â//
+//ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ä±ï¿½ï¿½Ï±ï¿½//
 void UActionMenuWidget::DestroyAtOnceClicked()
 {
 	//if (APlayerHUD* OwnerHUD = Cast<APlayerHUD>(GetWorld()->GetFirstPlayerController()->GetHUD()))
@@ -226,7 +226,7 @@ void UActionMenuWidget::DestroyAtOnceClicked()
 	}
 }
 
-//Text µ¨¸®°ÔÀÌÆ®//
+//Text ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®//
 FText UActionMenuWidget::UpdateExplanationText()
 {
 	FString CurrentString = "-";
@@ -244,7 +244,7 @@ FText UActionMenuWidget::UpdateExplanationText()
 /////////////////////
 
 /*
-//¼Òºñ ¾ÆÀÌÅÛ CountMenu¿¡¼­ È®ÀÎ°ú Ãë¼Ò ¹öÆ° BindUFunction//
+//ï¿½Òºï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ CountMenuï¿½ï¿½ï¿½ï¿½ È®ï¿½Î°ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½Æ° BindUFunction//
 void UActionMenuWidget::AcceptClicked()
 {
 	if (ActionType == EActionType::Drop)
@@ -283,7 +283,7 @@ void UActionMenuWidget::CancelClicked()
 /////////////////////////////////////////////////////////////
 */
 
-//Áõ°¡, °¨¼Ò//
+//ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½//
 void UActionMenuWidget::IncreaseClicked()
 {
 	CurrentCount += 1;

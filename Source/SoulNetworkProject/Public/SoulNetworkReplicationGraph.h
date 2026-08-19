@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -15,14 +15,14 @@ DECLARE_LOG_CATEGORY_EXTERN(LogSoulReplicationGraph, Display, All);
 
 enum class EClassRepNodeMapping : uint8
 {
-	NotRouted,					// ¾î¶² ³ëµå¿¡µµ ¸ÅÇÎµÇÁö ¾Ê½À´Ï´Ù. Æ¯¼ö ÄÉÀÌ½º ³ëµå¿¡¼­ Ã³¸®ÇÏ´Â Æ¯¼ö ÄÉÀÌ½º ¾×ÅÍ¿¡ »ç¿ëµË´Ï´Ù.
-	RelevantAllConnections,		// AlwaysRelevantNode ¶Ç´Â AlwaysRelevantStreamingLevelNode ³ëµå·Î ¶ó¿ìÆÃÇÕ´Ï´Ù.
+	NotRouted,					// ï¿½î¶² ï¿½ï¿½å¿¡ï¿½ï¿½ ï¿½ï¿½ï¿½Îµï¿½ï¿½ï¿½ ï¿½Ê½ï¿½ï¿½Ï´ï¿½. Æ¯ï¿½ï¿½ ï¿½ï¿½ï¿½Ì½ï¿½ ï¿½ï¿½å¿¡ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½Ï´ï¿½ Æ¯ï¿½ï¿½ ï¿½ï¿½ï¿½Ì½ï¿½ ï¿½ï¿½ï¿½Í¿ï¿½ ï¿½ï¿½ï¿½Ë´Ï´ï¿½.
+	RelevantAllConnections,		// AlwaysRelevantNode ï¿½Ç´ï¿½ AlwaysRelevantStreamingLevelNode ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.
 
-	// ±×¸®µå ³ëµå·ÎÀÇ °ø°£È­µÈ °æ·Î.
+	// ï¿½×¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½È­ï¿½ï¿½ ï¿½ï¿½ï¿½.
 
-	Spatialize_Static,			// GridNode·Î ¶ó¿ìÆÃ: ÀÌ ¾×ÅÍ´Â ¿òÁ÷ÀÌÁö ¾ÊÀ¸¸ç ¸Å ÇÁ·¹ÀÓ ¾÷µ¥ÀÌÆ®ÇÒ ÇÊ¿ä°¡ ¾ø½À´Ï´Ù.
-	Spatialize_Dynamic,			// GridNode·Î ¶ó¿ìÆÃ: ÀÌ ¾×ÅÍ ¸ðµå´Â ÀÚÁÖ ÀÌ·ç¾îÁö¸ç ÇÁ·¹ÀÓ´ç ÇÑ ¹ø¾¿ ¾÷µ¥ÀÌÆ®µË´Ï´Ù.
-	Spatilaize_Dormancy			// GridNode·Î ¶ó¿ìÆÃ: ÈÞ¸é »óÅÂÀÎ µ¿¾È¿¡´Â Á¤ÀûÀ¸·Î Ã³¸®µË´Ï´Ù. ÇÃ·¯½Ã/ÈÞ¸é µ¿ÀûÀÌ ¾Æ´Ñ °æ¿ì. ÀÌ´Â "ÈÞ¸é »óÅÂ°¡ ¾Æ´Ñ µ¿¾È ÀÌµ¿"ÇÏ´Â Ç×¸ñ¿¡ ´ëÇÑ °ÍÀÔ´Ï´Ù.
+	Spatialize_Static,			// GridNodeï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½: ï¿½ï¿½ ï¿½ï¿½ï¿½Í´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½Ê¿ä°¡ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.
+	Spatialize_Dynamic,			// GridNodeï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½: ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ì·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ó´ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½Ë´Ï´ï¿½.
+	Spatilaize_Dormancy			// GridNodeï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½: ï¿½Þ¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½È¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½Ë´Ï´ï¿½. ï¿½Ã·ï¿½ï¿½ï¿½/ï¿½Þ¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Æ´ï¿½ ï¿½ï¿½ï¿½. ï¿½Ì´ï¿½ "ï¿½Þ¸ï¿½ ï¿½ï¿½ï¿½Â°ï¿½ ï¿½Æ´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½"ï¿½Ï´ï¿½ ï¿½×¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ô´Ï´ï¿½.
 };
 
 /** SoulNetwork Replication Graph implementation. **/
@@ -35,14 +35,14 @@ class SOULNETWORKPROJECT_API USoulNetworkReplicationGraph : public UReplicationG
 	
 	virtual void ResetGameWorldState() override;
 
-	// UReplicationGraph ½ÃÀÛ ÇÔ¼ö. //
+	// UReplicationGraph ï¿½ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½. //
 	virtual void InitGlobalActorClassSettings() override;
 	virtual void InitGlobalGraphNodes() override;
 	virtual void InitConnectionGraphNodes(UNetReplicationGraphConnection* ConnectionManager) override;
-	// rout °ü·Ã ÇÔ¼ö. //
+	// rout ï¿½ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½. //
 	virtual void RouteAddNetworkActorToNodes(const FNewReplicatedActorInfo& ActorInfo, FGlobalActorReplicationInfo& GlobalInfo) override;
 	virtual void RouteRemoveNetworkActorToNodes(const FNewReplicatedActorInfo& ActorInfo) override;
-	// UReplicationGraph ³¡ ÇÔ¼ö. //
+	// UReplicationGraph ï¿½ï¿½ ï¿½Ô¼ï¿½. //
 	//virtual void ;
 
 public:
@@ -51,15 +51,15 @@ public:
 #endif
 
 protected:
-	// ÁöÁ¤µÈ Å¬·¡½º¿¡ »ç¿ëÇÒ ¸ÅÇÎÀ» °¡Á®¿É´Ï´Ù. //
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½É´Ï´ï¿½. //
 	EClassRepNodeMapping GetMappingPolicy(UClass* InClass);
 
 	FORCEINLINE bool IsSpatialized(EClassRepNodeMapping Mapping) { return Mapping >= EClassRepNodeMapping::Spatialize_Static; }
 public:
 	/*
-	* ÇØ´ç º¯¼öµéÀº ¸®ÇÃ¸®ÄÉÀÌ¼Ç ±×·¡ÇÁ¿¡¼­ Áß¿äÇÑ ³ëµåµéÀÌ´Ù.
-	* Áöµµ¸¦ ±×¸®µå·Î ºÐÇÒÇÏ°í ÇàÀ§ÀÚ°¡ »çÀü Á¤ÀÇµÈ ´Ù¾çÇÑ 
-	* ±×¸®µåÀÇ ¿¬°á¿¡ ³×Æ®¿öÅ© ¾÷µ¥ÀÌÆ®¸¦ º¸³»¾ß ÇÏ´ÂÁö °áÁ¤ÇÕ´Ï´Ù.
+	* ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ã¸ï¿½ï¿½ï¿½ï¿½Ì¼ï¿½ ï¿½×·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì´ï¿½.
+	* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½×¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ú°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Çµï¿½ ï¿½Ù¾ï¿½ï¿½ï¿½ 
+	* ï¿½×¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½á¿¡ ï¿½ï¿½Æ®ï¿½ï¿½Å© ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.
 	*/
 	UPROPERTY()
 	UReplicationGraphNode_GridSpatialization2D* GridNode;
@@ -67,7 +67,7 @@ public:
 	UPROPERTY()
 	UReplicationGraphNode_ActorList* AlwaysRelevantNode;
 
-	// ½ºÆ®¸®¹Ö¸ÊÀÇ ÀÌ¹Ì °ü·ÃÀÖ´Â ¾×ÅÍµé. //
+	// ï¿½ï¿½Æ®ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½Íµï¿½. //
 	TMap<FName, FActorRepListRefView> AlwaysRelevantStreamingLevelActors;
 
 protected:
@@ -80,14 +80,14 @@ protected:
 	TArray<UClass*> AlwaysRelevantClasses;
 
 	/*
-	* °ø°£ Àç±¸¼º = 
-	* °ø°£È­ Æ®¸®¸¦ °­Á¦·Î Àç±¸¼ºÇÕ´Ï´Ù. 
-	* ºñÈ°¼ºÈ­ÇÏ¸é ´ë½Å °íÁ¤µÈ´Ù´Â ÀÇ¹ÌÀÔ´Ï´Ù.
+	* ï¿½ï¿½ï¿½ï¿½ ï¿½ç±¸ï¿½ï¿½ = 
+	* ï¿½ï¿½ï¿½ï¿½È­ Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ç±¸ï¿½ï¿½ï¿½Õ´Ï´ï¿½. 
+	* ï¿½ï¿½È°ï¿½ï¿½È­ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½È´Ù´ï¿½ ï¿½Ç¹ï¿½ï¿½Ô´Ï´ï¿½.
 	*/
-	float GridCellSize = 10000.0f;				// ±×¸®µå ÇÏ³ªÀÇ »çÀÌÁî Å©±â.
-	float SpatialBiasX = -150000.0f;			// °øÀ¯ÇÒ X Å©±â. 
-	float SpatialBiasY = -200000.0f;			// °øÀ¯ÇÒ Y Å©±â.
-	bool bDisableSpatialRebuilding = true;		// °ø°£À» Àç±¸¼ºÇÒÁö¿¡ ´ëÇÑ ¿©ºÎ
+	float GridCellSize = 10000.0f;				// ï¿½×¸ï¿½ï¿½ï¿½ ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å©ï¿½ï¿½.
+	float SpatialBiasX = -150000.0f;			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ X Å©ï¿½ï¿½. 
+	float SpatialBiasY = -200000.0f;			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Y Å©ï¿½ï¿½.
+	bool bDisableSpatialRebuilding = true;		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ç±¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 private:
 	TClassMap<EClassRepNodeMapping> ClassRepNodePolicies;
@@ -117,7 +117,7 @@ public:
 #endif
 
 private:
-	// ·¹º§ ½ºÆ®¸®¹Ö¿¡ ¼ÓÇÏ´Â ¾×ÅÍµéÀ» ÀúÀå. //
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ®ï¿½ï¿½ï¿½Ö¿ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½Íµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½. //
 	TArray<FName, TInlineAllocator<64>> AlwaysRelevantStreamingLevelsNeedingReplication;
 
 	TArray<FAlwaysRelevantActorInfo> PastRelevantActors;

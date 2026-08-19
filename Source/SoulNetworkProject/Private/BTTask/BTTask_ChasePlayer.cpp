@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 
 #include "BTTask/BTTask_ChasePlayer.h"
@@ -28,7 +28,7 @@ EBTNodeResult::Type UBTTask_ChasePlayer::ExecuteTask(UBehaviorTreeComponent& Own
 	{
 		FNavLocation NavLoc;
 
-		//³×ºñ°ÔÀÌ¼Ç ½Ã½ºÅÛÀ¸·Î ÇÃ·¹ÀÌ¾î¸¦ Ã£À»¶§±îÁö ·£´ý À§Ä¡¸¦ °¡Á®¿È//
+		//ï¿½×ºï¿½ï¿½ï¿½Ì¼ï¿½ ï¿½Ã½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾î¸¦ Ã£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½//
 		UNavigationSystemV1* const Nav_System = UNavigationSystemV1::GetCurrent(GetWorld());
 		if (Nav_System->GetRandomPointInNavigableRadius(TargetLoc, Search_Radius, NavLoc, nullptr))
 		{

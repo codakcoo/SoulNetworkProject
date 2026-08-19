@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 
 #include "Widget/OptionWidget.h"
@@ -109,7 +109,7 @@ void UOptionWidget::ExitOption()
 	}
 }
 
-//Option¸Þ´º ´ÜÃàÅ°//
+//Optionï¿½Þ´ï¿½ ï¿½ï¿½ï¿½ï¿½Å°//
 void UOptionWidget::SwitchingMenu(bool bForward)
 {
 	if(bForward)

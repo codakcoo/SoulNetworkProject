@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 
 #include "Classes/InventoryComponent.h"
@@ -102,7 +102,7 @@ bool UInventoryComponent::AddItem(FInventoryData& Item, bool bShowList)
 
 bool UInventoryComponent::RemoveItem(FInventoryData& Item)
 {
-	//ÀåÂøÁßÀÏ °æ¿ì ÇØ´ç ÀåÄ¡Ã¢¿¡ ÀÖ´Â ¾ÆÀÌÅÛÀ» »èÁ¦ÇÔ//
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ø´ï¿½ ï¿½ï¿½Ä¡Ã¢ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½//
 	if (Item.ItemData.ItemType != EItemType::Expendable && Item.ItemData.ItemType != EItemType::Arrow)
 	{
 		if (Item.bEquip)
@@ -359,7 +359,7 @@ void UInventoryComponent::DestroyAtOnceItem(TArray<FInventoryData> DestroyItems)
 }
 
 
-//ÀÎº¥Åä¸®¿¡¼­ °¢ ÀÎµ¦½ºÀÇ ¾ÆÀÌÅÛÀ» Ãß°¡ÇÔ//
+//ï¿½Îºï¿½ï¿½ä¸®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ï¿½ï¿½//
 bool UInventoryComponent::AddEquipItem(FInventoryData& Item, int32 Index, EEquipHand HandType)
 {
 
@@ -537,8 +537,8 @@ bool UInventoryComponent::AddEquipItem(FInventoryData& Item, int32 Index, EEquip
 }
 //////////////////////////////////
 
-//Data·Î º¯Çü//
-//ÇØ´ç ¾ÆÀÌÅÛÀÇ À§Ä¡¸¦ ¿Å±â°Å³ª ÇØÃ¼ ÇÏ¿´À»°æ¿ì ÇØÃ¼ÇÔ (Item Âø¿ë¿©ºÎµµ ÇØÃ¼ÇÔ)//
+//Dataï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½//
+//ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½Å±ï¿½Å³ï¿½ ï¿½ï¿½Ã¼ ï¿½Ï¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ (Item ï¿½ï¿½ï¿½ë¿©ï¿½Îµï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½)//
 bool UInventoryComponent::RemoveEquipItem(FInventoryData& Item, int32 Index, EEquipHand HandType)
 {
 	SetEquipAndIndex(Item, false, 0);
@@ -717,7 +717,7 @@ bool UInventoryComponent::RemoveEquipItem(FInventoryData& Item, int32 Index, EEq
 }
 //////////////////////////////////////////////////
 
-//ÀåÂø ¾ÆÀÌÅÛ ¹ÝÈ¯//
+//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯//
 FInventoryData* UInventoryComponent::GetItem(EItemType ItemType, uint8 Index, EEquipHand HandType)
 {
 	switch (ItemType)

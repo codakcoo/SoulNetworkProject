@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -83,7 +83,7 @@ private:
 	void GetResolutionIndex(FIntPoint ResolutionData);
 
 private:
-	//ÇØ»óµµ//
+	//ï¿½Ø»ï¿½//
 	UPROPERTY(meta = (BindWidget))
 	class UTextBlock* ResolutionText;
 	UPROPERTY(meta = (BindWidget))
@@ -92,7 +92,7 @@ private:
 	class UButton* ResolutionRightButton;
 	//////////
 	
-	//À©µµ¿ì//
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½//
 	UPROPERTY(meta = (BindWidget))
 	class UTextBlock* WindowModeText;
 	UPROPERTY(meta = (BindWidget))
@@ -101,7 +101,7 @@ private:
 	class UButton* WindowModeRightButton;
 	//////////
 
-	//±×¸²ÀÚ//
+	//ï¿½×¸ï¿½ï¿½ï¿½//
 	UPROPERTY(meta = (BindWidget))
 	class UTextBlock* ShadowText;
 	UPROPERTY(meta = (BindWidget))
@@ -110,7 +110,7 @@ private:
 	class UButton* ShadowRightButton;
 	/////////
 
-	//ÅØ½ºÃÄ//
+	//ï¿½Ø½ï¿½ï¿½ï¿½//
 	UPROPERTY(meta = (BindWidget))
 	class UTextBlock* TextureText;
 	UPROPERTY(meta = (BindWidget))
@@ -119,7 +119,7 @@ private:
 	class UButton* TextureRightButton;
 	/////////
 
-	//Ä÷¸®Æ¼//
+	//ï¿½ï¿½ï¿½ï¿½Æ¼//
 	UPROPERTY(meta = (BindWidget))
 	class UTextBlock* FoliageText;
 	UPROPERTY(meta = (BindWidget))
@@ -128,7 +128,7 @@ private:
 	class UButton* FoliageRightButton;
 	/////////
 
-	//V½ÌÅ©//
+	//Vï¿½ï¿½Å©//
 	UPROPERTY(meta = (BindWidget))
 	class UTextBlock* VSyncText;
 	UPROPERTY(meta = (BindWidget))
@@ -137,7 +137,7 @@ private:
 	class UButton* VSyncRightButton;
 	////////
 
-	//ÇÁ·¹ÀÓ ¼Óµµ//
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Óµï¿½//
 	UPROPERTY(meta = (BindWidget))
 	class UTextBlock* FrameRateText;
 	UPROPERTY(meta = (BindWidget))

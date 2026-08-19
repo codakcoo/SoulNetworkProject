@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 
 #include "Widget/Slot/Checkpoint/CPInventorySlotWidget.h"
@@ -198,7 +198,7 @@ void UCPInventorySlotWidget::BackgroundPopup()
 	CancelPopup();
 }
 
-//¾ÆÀÌÅÛÀ» ¸Ô°Å³ª ¹ö¸®¸é ÀÎº¥Åä¸®¸¦ ¸®ÇÁ·¹½¬ÇÏ°Ô AddDynamic½ÃÅ´//
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô°Å³ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Îºï¿½ï¿½ä¸®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ AddDynamicï¿½ï¿½Å´//
 void UCPInventorySlotWidget::RefreshInventory()
 {
 	ChangeInventorySlot(WidgetItemType);
@@ -275,7 +275,7 @@ void UCPInventorySlotWidget::RefreshInventory()
 }
 ////////////////////////////////////////////////////////////////
 
-//ÀÎº¥Åä¸® z,x·Î ÀÎµ¦½º º¯°æÀ¸·Î ÇØ´ç½½·ÔÀÎµ¦½º·Î ¾ÆÀÌÅÛ½½·ÔÀ¸·Î ¹Ù²Þ//
+//ï¿½Îºï¿½ï¿½ä¸® z,xï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ø´ç½½ï¿½ï¿½ï¿½Îµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Û½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù²ï¿½//
 void UCPInventorySlotWidget::SwitchingMenu(bool bForward)
 {
 	if (InventoryType == EInventoryType_CP::Confirm) return;
@@ -314,7 +314,7 @@ void UCPInventorySlotWidget::SwitchActiveMenu()
 	bLeft = bLeft ? false : true;
 }
 
-//À§Á¬ ÅØ½ºÆ®¸¦ ÇØ´ç activeÁßÀÎ ¾ÆÀÌÅÛÅ¸ÀÔ¿¡ ¸Â°Ô º¯°æÇÔ//
+//ï¿½ï¿½ï¿½ï¿½ ï¿½Ø½ï¿½Æ®ï¿½ï¿½ ï¿½Ø´ï¿½ activeï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å¸ï¿½Ô¿ï¿½ ï¿½Â°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½//
 FText UCPInventorySlotWidget::UpdateWidgetText()
 {
 	FString GetTypeName;
@@ -367,11 +367,11 @@ void UCPInventorySlotWidget::CallApplyDetailData(FInventoryData InData)
 }
 ////////////////////////////////////////////////////////////
 
-//Å¬¸¯ ¾ÆÀÌÅÛÀÇ ¾×¼Ç¸Þ´º¸¦ »ý¼ºÇÔ//
+//Å¬ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½×¼Ç¸Þ´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½//
 
 /// ///////////////////////////////
 
-//¸ðµç¹«±âÀÇ ¾ÆÀÌÅÛÀ» »ý¼º//
+//ï¿½ï¿½ç¹«ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½//
 void UCPInventorySlotWidget::OnWeaponClicked()
 {
 	WidgetItemType = EItemType::Weapon;
@@ -379,7 +379,7 @@ void UCPInventorySlotWidget::OnWeaponClicked()
 	RefreshInventory();
 }
 
-//¸ðµçÇï¸äÀÇ ¾ÆÀÌÅÛÀ» »ý¼º//
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½//
 void UCPInventorySlotWidget::OnHelmetClicked()
 {
 	WidgetItemType = EItemType::Helmet;
@@ -387,7 +387,7 @@ void UCPInventorySlotWidget::OnHelmetClicked()
 	RefreshInventory();
 }
 
-//¸ðµç°©¿ÊÀÇ ¾ÆÀÌÅÛÀ» »ý¼º//
+//ï¿½ï¿½ç°©ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½//
 void UCPInventorySlotWidget::OnArmorClicked()
 {
 	WidgetItemType = EItemType::Armor;
@@ -395,7 +395,7 @@ void UCPInventorySlotWidget::OnArmorClicked()
 	RefreshInventory();
 }
 
-//¸ðµç¹ÙÁöÀÇ ¾ÆÀÌÅÛÀ» »ý¼º//
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½//
 void UCPInventorySlotWidget::OnPantClicked()
 {
 	WidgetItemType = EItemType::Pant;
@@ -403,7 +403,7 @@ void UCPInventorySlotWidget::OnPantClicked()
 	RefreshInventory();
 }
 
-//¸ðµçºÎÃ÷ÀÇ ¾ÆÀÌÅÛÀ» »ý¼º//
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½//
 void UCPInventorySlotWidget::OnBootsClicked()
 {
 	WidgetItemType = EItemType::Boots;
@@ -411,7 +411,7 @@ void UCPInventorySlotWidget::OnBootsClicked()
 	RefreshInventory();
 }
 
-//¸ðµç¼ÒºñÀÇ ¾ÆÀÌÅÛÀ» »ý¼º//
+//ï¿½ï¿½ï¿½Òºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½//
 void UCPInventorySlotWidget::OnExpendableClicked()
 {
 	WidgetItemType = EItemType::Expendable;

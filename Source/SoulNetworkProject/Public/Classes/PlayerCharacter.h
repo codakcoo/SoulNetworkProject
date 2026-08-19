@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -397,7 +397,7 @@ private:
 	UPROPERTY()
 	bool bInteract = false;
 
-	//Interaction (»óÈ£ÀÛ¿ë)//
+	//Interaction (ï¿½ï¿½È£ï¿½Û¿ï¿½)//
 	bool bActiveInteraction = false;
 	int8 InteractionIndex = 0;
 

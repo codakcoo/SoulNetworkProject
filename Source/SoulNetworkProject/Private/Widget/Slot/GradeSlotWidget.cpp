@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 
 #include "Widget/Slot/GradeSlotWidget.h"
@@ -97,7 +97,7 @@ uint8 UGradeSlotWidget::SlotStackCount()
 	return StackCount;
 }
 
-//½½·Ô È°¼ºÈ­, ºñÈ°¼ºÈ­//
+//ï¿½ï¿½ï¿½ï¿½ È°ï¿½ï¿½È­, ï¿½ï¿½È°ï¿½ï¿½È­//
 void UGradeSlotWidget::SetSlotEnabled(bool bActive, USlotWidget* EnabledWidget)
 {
 	for (auto& ItemSlot : SlotArray)

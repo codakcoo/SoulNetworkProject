@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -72,18 +72,18 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 public:
-	//±âº»ÀûÀÎ Ãß»óÈ­ ÇÔ¼öµé// *ÀÚ½Ä °´Ã¼¿¡ ¿À¹ö¶óÀÌµù ÇØ¾ßÇÔ*
+	//ï¿½âº»ï¿½ï¿½ï¿½ï¿½ ï¿½ß»ï¿½È­ ï¿½Ô¼ï¿½ï¿½ï¿½// *ï¿½Ú½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ ï¿½Ø¾ï¿½ï¿½ï¿½*
 
-	virtual void BeginData(class ACharacterBase* InOwner, class USkeletalMeshComponent* CastMesh) PURE_VIRTUAL(AMasterMagicActor, );	//Begin½Ã È£Ãâ ÇÔ¼ö//
+	virtual void BeginData(class ACharacterBase* InOwner, class USkeletalMeshComponent* CastMesh) PURE_VIRTUAL(AMasterMagicActor, );	//Beginï¿½ï¿½ È£ï¿½ï¿½ ï¿½Ô¼ï¿½//
 
-	virtual void LoopData() PURE_VIRTUAL(AMasterMagicActor, );	//Loop½Ã È£Ãâ ÇÔ¼ö//
+	virtual void LoopData() PURE_VIRTUAL(AMasterMagicActor, );	//Loopï¿½ï¿½ È£ï¿½ï¿½ ï¿½Ô¼ï¿½//
 
-	virtual void MultipleData(class ACharacterBase* InOwner) PURE_VIRTUAL(AMasterMagicActor, );	//Multiple È£Ãâ ÇÔ¼ö// *»óÈ²¿¡ µû¶ó ÀçÁ¤ÀÇ ÇÏ°Å³ª ¾ÈÇØµµ µÊ*
+	virtual void MultipleData(class ACharacterBase* InOwner) PURE_VIRTUAL(AMasterMagicActor, );	//Multiple È£ï¿½ï¿½ ï¿½Ô¼ï¿½// *ï¿½ï¿½È²ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï°Å³ï¿½ ï¿½ï¿½ï¿½Øµï¿½ ï¿½ï¿½*
 
-	virtual void EndData() PURE_VIRTUAL(AMasterMagicActor, );	//End½Ã È£Ãâ ÇÔ¼ö//
+	virtual void EndData() PURE_VIRTUAL(AMasterMagicActor, );	//Endï¿½ï¿½ È£ï¿½ï¿½ ï¿½Ô¼ï¿½//
 
 protected:
-	//º¸Åë Niagara, À§Ä¡, È¸ÀüÇÏ°Å³ª DetachÇÒ¶§¸¸ È£ÃâÇØ¼­ »ç¿ëÇÔ.//
+	//ï¿½ï¿½ï¿½ï¿½ Niagara, ï¿½ï¿½Ä¡, È¸ï¿½ï¿½ï¿½Ï°Å³ï¿½ Detachï¿½Ò¶ï¿½ï¿½ï¿½ È£ï¿½ï¿½ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½.//
 	UFUNCTION(NetMulticast, Reliable, WithValidation)
 	void Multicast_BeginData();
 	UFUNCTION(NetMulticast, Reliable, WithValidation)
@@ -97,7 +97,7 @@ protected:
 	UFUNCTION()
 	void RadialReaction(FTransform SpawnTransform, float Radius);
 
-	//ÄÝ¸®Àü Update// Tick.
+	//ï¿½Ý¸ï¿½ï¿½ï¿½ Update// Tick.
 	virtual	void UpdatedCollisionEvent(float InDeltaTime) PURE_VIRTUAL(AMasterMagicActor, );
 	UFUNCTION(Server, Reliable)
 	void Server_UpdatedCollisionEvent(float InDeltaTime);

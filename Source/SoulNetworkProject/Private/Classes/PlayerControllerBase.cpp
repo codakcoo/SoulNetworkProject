@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 
 #include "Classes/PlayerControllerBase.h"
@@ -223,7 +223,7 @@ void APlayerControllerBase::CallCheckPointMenu()
 	}
 }
 
-// ServerNotifyLoadedWorld : »õ·Î¿î ¸ÊÀ¸·Î ·Îµå ¿Ï·áÇßÀ»‹š ¼­¹ö¿¡°Ô ¾Ë¸®´Â È£ÃâÇÔ¼ö¶ó°í ÇÔ. void ServerNotifyLoadedWorld(FName WorldPackageName)
+// ServerNotifyLoadedWorld : ï¿½ï¿½ï¿½Î¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ ï¿½Ï·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ë¸ï¿½ï¿½ï¿½ È£ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½. void ServerNotifyLoadedWorld(FName WorldPackageName)
 //void APlayerControllerBase::LoadWorld_Implementation()
 //{
 //	if(!GetWorld()->GetAuthGameMode()) return;

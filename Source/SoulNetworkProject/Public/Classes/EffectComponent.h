@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -50,7 +50,7 @@ public:
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
 public:
-	/*SurfaceTypeÀº EffectTypeÀÌ surfaceÀÏ¶§¸¸ ÀÛµ¿ÇÔ*/
+	/*SurfaceTypeï¿½ï¿½ EffectTypeï¿½ï¿½ surfaceï¿½Ï¶ï¿½ï¿½ï¿½ ï¿½Ûµï¿½ï¿½ï¿½*/
 	UFUNCTION()
 	void EffectSequence(EEffectType EffectType, FVector EffectLocation = FVector::ZeroVector, FHitResult HitResult = FHitResult());
 
@@ -96,7 +96,7 @@ public:
 	UFUNCTION()
 	void StepEffect(class UPhysicalMaterial* PhysMaterial, FVector PlayLocation);
 
-	//»óÈ£ÀÛ¿ë ÀÌÆåÆ®//
+	//ï¿½ï¿½È£ï¿½Û¿ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®//
 	UFUNCTION(Server, Reliable, WithValidation)
 	void Server_ReactionEffect(class USoundBase* PlayCue = nullptr, class UNiagaraSystem* NiagaraAsset = nullptr, FVector EffectLocation = FVector::ZeroVector, FRotator EffectRotation = FRotator::ZeroRotator, float EffectScale = 1.0f);
 	UFUNCTION(NetMulticast, Reliable, WithValidation)
@@ -108,7 +108,7 @@ private:
 
 	void RemoveNiagara(USkeletalMeshComponent* ApplyMesh, FName TagName);
 
-	//ÀÌÆåÆ®//
+	//ï¿½ï¿½ï¿½ï¿½Æ®//
 	FEffectData* GetEffectData(FName RowName);
 
 	FEffectData* GetSurfaceEffectData(TWeakObjectPtr<class UPhysicalMaterial> PhysMaterial, UDataTable* UseDt);

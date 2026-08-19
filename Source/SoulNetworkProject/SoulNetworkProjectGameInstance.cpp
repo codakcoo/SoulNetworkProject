@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 
 #include "SoulNetworkProjectGameInstance.h"
@@ -141,7 +141,7 @@ void USoulNetworkProjectGameInstance::StartSession()
 	if(SessionInterface)
 	{
 		UE_LOG(LogSoulNetwork,Warning, TEXT("Call StartSession!!!!!!!!"));
-		SessionInterface->StartSession(SESSION_NAME);	//SessionÀ» ½ÃÀÛÇÏ¸é ÀÌ¼­¹ö¸¦ ¸®½ºÆ®¿¡ ³ëÃâÀ» ¾È½ÃÅ´//
+		SessionInterface->StartSession(SESSION_NAME);	//Sessionï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ ï¿½Ì¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½È½ï¿½Å´//
 
 		if (!GetWorld()->GetGameState()) return;
 		if (GetWorld()->GetGameState()->GetClass()->ImplementsInterface(UGameStateInterface::StaticClass()))
@@ -182,7 +182,7 @@ void USoulNetworkProjectGameInstance::Join(uint32 Index)
 	APlayerController* Con = GetFirstLocalPlayerController();
 	if (!Con) return;
 	if (!SessionInterface || !SessionSearch) return;
-	//if(MainMenuWidget) MainMenuWidget->Teardown();	//MenuWidget Àü¿ë//
+	//if(MainMenuWidget) MainMenuWidget->Teardown();	//MenuWidget ï¿½ï¿½ï¿½ï¿½//
 
 	CurrentSignPoint = nullptr;
 
@@ -223,10 +223,10 @@ void USoulNetworkProjectGameInstance::RefreshServerList_Implementation()
 	SessionSearch = MakeShareable(new FOnlineSessionSearch());
 	if (SessionSearch)
 	{
-		//SessionSearch->bIsLanQuery = true;	//·ÎÄÃ ¸ÅÄª¿©ºÎ
-		SessionSearch->MaxSearchResults = 1000;	//¼­¹ö Å½»ö¹üÀ§
-		SessionSearch->QuerySettings.Set(SEARCH_PRESENCE, true, EOnlineComparisonOp::Equals);	//ÀÎÅÍ³Ý¼­¹ö ÇÊÅÍ°°À½ °³³ä
-		SessionInterface->FindSessions(0, SessionSearch.ToSharedRef());							//¼­¹ö Ã£±â
+		//SessionSearch->bIsLanQuery = true;	//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Äªï¿½ï¿½ï¿½ï¿½
+		SessionSearch->MaxSearchResults = 1000;	//ï¿½ï¿½ï¿½ï¿½ Å½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		SessionSearch->QuerySettings.Set(SEARCH_PRESENCE, true, EOnlineComparisonOp::Equals);	//ï¿½ï¿½ï¿½Í³Ý¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Í°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		SessionInterface->FindSessions(0, SessionSearch.ToSharedRef());							//ï¿½ï¿½ï¿½ï¿½ Ã£ï¿½ï¿½
 		
 		UE_LOG(LogSoulNetwork, Warning, TEXT("Starting Find Session"));
 	}
@@ -241,12 +241,12 @@ void USoulNetworkProjectGameInstance::SearchServerList(FName SessionName)
 	SessionSearch = MakeShareable(new FOnlineSessionSearch());
 	if (SessionSearch)
 	{
-		if (IOnlineSubsystem::Get()->GetSubsystemName() == "NULL") SessionSearch->bIsLanQuery = true;	//·ÎÄÃ ¸ÅÄª
+		if (IOnlineSubsystem::Get()->GetSubsystemName() == "NULL") SessionSearch->bIsLanQuery = true;	//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Äª
 		else SessionSearch->bIsLanQuery = false;
-		//SessionSearch->bIsLanQuery = true;	//·ÎÄÃ ¸ÅÄª¿©ºÎ
-		SessionSearch->MaxSearchResults = 1000;	//¼­¹ö Å½»ö¹üÀ§
-		SessionSearch->QuerySettings.Set(SEARCH_PRESENCE, true, EOnlineComparisonOp::Equals);	//ÀÎÅÍ³Ý¼­¹ö ÇÊÅÍ°°À½ °³³ä
-		SessionInterface->FindSessions(0, SessionSearch.ToSharedRef());							//¼­¹ö Ã£±â
+		//SessionSearch->bIsLanQuery = true;	//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Äªï¿½ï¿½ï¿½ï¿½
+		SessionSearch->MaxSearchResults = 1000;	//ï¿½ï¿½ï¿½ï¿½ Å½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		SessionSearch->QuerySettings.Set(SEARCH_PRESENCE, true, EOnlineComparisonOp::Equals);	//ï¿½ï¿½ï¿½Í³Ý¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Í°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		SessionInterface->FindSessions(0, SessionSearch.ToSharedRef());							//ï¿½ï¿½ï¿½ï¿½ Ã£ï¿½ï¿½
 
 		UE_LOG(LogSoulNetwork, Warning, TEXT("Starting Find Session"));
 	}
@@ -964,7 +964,7 @@ void USoulNetworkProjectGameInstance::OnDestroySessionComplete(FName SessionName
 	}
 }
 
-//¼­¹ö Ã£±â//
+//ï¿½ï¿½ï¿½ï¿½ Ã£ï¿½ï¿½//
 void USoulNetworkProjectGameInstance::OnFindSessionComplete(bool Success)
 {
 	UE_LOG(LogSoulNetwork, Warning, TEXT("Call FindSessionComplete"));
@@ -973,8 +973,8 @@ void USoulNetworkProjectGameInstance::OnFindSessionComplete(bool Success)
 		UE_LOG(LogSoulNetwork, Warning, TEXT("Finished Find Session"));
 
 		TArray<FServerData> ServerNames;
-		//TArray<FTestServerData> ServerNames;	//MenuWidget Àü¿ë//
-		//Å×½ºÆ®¿ë ¼­¹ö//
+		//TArray<FTestServerData> ServerNames;	//MenuWidget ï¿½ï¿½ï¿½ï¿½//
+		//ï¿½×½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½//
 		//FServerData Data2;
 		//ServerNames.Add(Data2);
 		//ServerNames.Add(Data2);
@@ -984,7 +984,7 @@ void USoulNetworkProjectGameInstance::OnFindSessionComplete(bool Success)
 		for (auto& SearchResult : SessionSearch->SearchResults)
 		{
 			UE_LOG(LogSoulNetwork, Warning, TEXT("Found session name : %s"), *SearchResult.GetSessionIdStr());
-			//FTestServerData Data;	//MenuWidget Àü¿ë//
+			//FTestServerData Data;	//MenuWidget ï¿½ï¿½ï¿½ï¿½//
 			FServerData Data;
 			Data.Name = SearchResult.GetSessionIdStr();
 			Data.MaxPlayers = SearchResult.Session.SessionSettings.NumPublicConnections;
@@ -1008,7 +1008,7 @@ void USoulNetworkProjectGameInstance::OnFindSessionComplete(bool Success)
 			CurrentServerName = NAME_None;
 			return;
 		}
-		//if(MainMenuWidget) MainMenuWidget->SetServerList(ServerNames);	//MenuWidget Àü¿ë//
+		//if(MainMenuWidget) MainMenuWidget->SetServerList(ServerNames);	//MenuWidget ï¿½ï¿½ï¿½ï¿½//
 		if(CurrentSignPoint) CurrentSignPoint->SetServerRow(ServerNames);
 	}
 }
@@ -1025,7 +1025,7 @@ void USoulNetworkProjectGameInstance::OnNetworkFailure(UWorld* World, UNetDriver
 		}), 0.1f, false);
 }
 
-//¼­¹ö µé¾î°¡±â//
+//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½î°¡ï¿½ï¿½//
 void USoulNetworkProjectGameInstance::OnJoinSessionComplete(FName SessionName, EOnJoinSessionCompleteResult::Type Result)
 {
 	APlayerController* Con = GetFirstLocalPlayerController();
@@ -1084,18 +1084,18 @@ void USoulNetworkProjectGameInstance::OnStartSessionComplete(FName SessionName, 
 }
 //////////////
 
-//¼½¼Ç ¸¸µé±â//
+//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½//
 void USoulNetworkProjectGameInstance::CreateSession()
 {
 	if (SessionInterface)
 	{
 		FOnlineSessionSettings SessionSettings;
 
-		//¼½¼Ç ¼¼ÆÃÀ» ¼³Á¤ ¾ÈÇÒ°æ¿ì ¼½¼ÇÀº 0°³ÀÌ´Ù.//
-		if (IOnlineSubsystem::Get()->GetSubsystemName() == "NULL") SessionSettings.bIsLANMatch = true;	//·ÎÄÃ ¸ÅÄª
+		//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ò°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 0ï¿½ï¿½ï¿½Ì´ï¿½.//
+		if (IOnlineSubsystem::Get()->GetSubsystemName() == "NULL") SessionSettings.bIsLANMatch = true;	//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Äª
 		else SessionSettings.bIsLANMatch = false;
-		SessionSettings.NumPublicConnections = 4;	//ÇÃ·¹ÀÌ¾î ¼ö
-		SessionSettings.bShouldAdvertise = true;	//±¤°í
+		SessionSettings.NumPublicConnections = 4;	//ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½
+		SessionSettings.bShouldAdvertise = true;	//ï¿½ï¿½ï¿½ï¿½
 		//SessionSettings.bUseLobbiesIfAvailable = true;
 		SessionSettings.Set(CurrentServerName, CurrentSaveName, EOnlineDataAdvertisementType::ViaOnlineServiceAndPing);
 		//SessionSettings.bUsesPresence = true;

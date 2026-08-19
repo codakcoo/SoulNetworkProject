@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 
 #include "Classes/Magic/BuffSpellActor.h"
@@ -12,7 +12,7 @@ ABuffSpellActor::ABuffSpellActor()
 	PrimaryActorTick.bCanEverTick = false;
 }
 
-//½ÃÀÛ È£Ãâ//
+//ï¿½ï¿½ï¿½ï¿½ È£ï¿½ï¿½//
 void ABuffSpellActor::BeginData(ACharacterBase* InOwner, USkeletalMeshComponent* CastMesh)
 {
 	if (!InOwner) return;
@@ -41,7 +41,7 @@ void ABuffSpellActor::BeginData(ACharacterBase* InOwner, USkeletalMeshComponent*
 }
 //////////
 
-//Áß°£ È£Ãâ//
+//ï¿½ß°ï¿½ È£ï¿½ï¿½//
 void ABuffSpellActor::LoopData()
 {
 	if (!SpawnOwner) return;
@@ -56,7 +56,7 @@ void ABuffSpellActor::LoopData()
 }
 ////////////
 
-//³¡ È£Ãâ///
+//ï¿½ï¿½ È£ï¿½ï¿½///
 void ABuffSpellActor::EndData()
 {
 	SpawnOwner->Server_ClearSpellActor();

@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 
 #include "Classes/SceneCapturePawn.h"
@@ -15,8 +15,6 @@
 #include "Misc/FileHelper.h"
 #include "Misc/Paths.h"
 
-
-#include "Kismet/GameplayStatics.h"
 
 // Sets default values
 ASceneCapturePawn::ASceneCapturePawn()
@@ -110,11 +108,18 @@ UTexture2D* ASceneCapturePawn::UpdatedMeshs(USaveCharacterState* SaveData)
 
 UTexture2D* ASceneCapturePawn::GetRenderTargetToTexture(UTextureRenderTarget2D* RenderTarget)
 {
-	UTexture2D* Texture2D;
-	
-	Texture2D = RenderTarget->ConstructTexture2D(this, TEXT("texture"), EObjectFlags::RF_NoFlags, CTF_DeferCompression);
+	if (!RenderTarget) return nullptr;
+
+	UTexture2D* Texture2D = RenderTarget->ConstructTexture2D(
+		this, TEXT("texture"), EObjectFlags::RF_NoFlags, CTF_DeferCompression);
+	if (!Texture2D) return nullptr;
+
 	RenderTarget->CompressionSettings = TextureCompressionSettings::TC_VectorDisplacementmap;
+
+#if WITH_EDITORONLY_DATA
+	// 밉맵 생성 설정은 에디터 전용 데이터라 패키징 빌드에는 존재하지 않는다.
 	Texture2D->MipGenSettings = TextureMipGenSettings::TMGS_NoMipmaps;
+#endif
 
 	Texture2D->SRGB = 1;
 	Texture2D->UpdateResource();

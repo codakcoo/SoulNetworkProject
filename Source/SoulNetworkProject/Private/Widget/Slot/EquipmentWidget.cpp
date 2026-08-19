@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 
 #include "Widget/Slot/EquipmentWidget.h"
@@ -64,9 +64,9 @@ void UEquipmentWidget::NativeConstruct()
 	ArrowSlotArray.Add(FirstArrowSlot);
 	ArrowSlotArray.Add(SecondArrowSlot);
 
-	AllSetSlotType();			//ÀåºñÃ¢ Å¸ÀÔ°ú ÀÎµ¦½º¼³Á¤//
-	Info.ClearInfo();			//½½Æý¼±ÅÃ½Ã ±× ½½·ÔÀÇ »óÅÂµéÀ» °¡Á®¿È//
-	RefreshEquipment();			//ÀåºñÃ¢À» »õ·Î°íÄ§ÇÔ//
+	AllSetSlotType();			//ï¿½ï¿½ï¿½Ã¢ Å¸ï¿½Ô°ï¿½ ï¿½Îµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½//
+	Info.ClearInfo();			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Âµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½//
+	RefreshEquipment();			//ï¿½ï¿½ï¿½Ã¢ï¿½ï¿½ ï¿½ï¿½ï¿½Î°ï¿½Ä§ï¿½ï¿½//
 
 	if (InventoryComponent)
 	{
@@ -78,10 +78,10 @@ void UEquipmentWidget::NativeConstruct()
 	AlReadyGradeSlot();
 }
 
-//½½·Ô Å¸ÀÔÁ¤ÇÏ±â//
+//ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½//
 void UEquipmentWidget::AllSetSlotType()
 {
-	//¹«±â ½½·Ô//
+	//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½//
 	for (int8 i = 0; i < L_WeaponSlotArray.Num(); i++)
 	{
 		L_WeaponSlotArray[i]->SetSlotType(EItemType::Weapon, i, EEquipHand::Left);
@@ -92,14 +92,14 @@ void UEquipmentWidget::AllSetSlotType()
 	}
 	////////////
 
-	//Àåºñ ½½·Ô//
+	//ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½//
 	HelmetSlot->SetSlotType(EItemType::Helmet);
 	ArmorSlot->SetSlotType(EItemType::Armor);
 	PantSlot->SetSlotType(EItemType::Pant);
 	BootsSlot->SetSlotType(EItemType::Boots);
 	////////////
 
-	//¼ÒºñÇ° ½½·Ô//
+	//ï¿½Òºï¿½Ç° ï¿½ï¿½ï¿½ï¿½//
 	for (int8 i = 0; i < ExpendableSlotArray.Num(); i++)
 	{
 		ExpendableSlotArray[i]->SetSlotType(EItemType::Expendable, i);
@@ -114,7 +114,7 @@ void UEquipmentWidget::AllSetSlotType()
 }
 ////////////////////
 
-//¼±ÅÃ ¸Þ´º·Î °¡±â//
+//ï¿½ï¿½ï¿½ï¿½ ï¿½Þ´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½//
 void UEquipmentWidget::OnSelectMenu(EItemType ItemType)
 {
 	SlotSwitcher->SetActiveWidget(SelectMenu);
@@ -122,7 +122,7 @@ void UEquipmentWidget::OnSelectMenu(EItemType ItemType)
 }
 ////////////////////
 
-//Hoved ÀÌ¸§ ¾÷µ¥ÀÌÆ®//
+//Hoved ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®//
 void UEquipmentWidget::UpdateWidgetText(UEquipmentType_SlotWidget* InSlot)
 {
 	FText Text = FText::FromString("-");
@@ -195,32 +195,32 @@ void UEquipmentWidget::UpdateWidgetText(UEquipmentType_SlotWidget* InSlot)
 ///////////////////
 
 
-//Data·Î º¯Çü//
+//Dataï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½//
 void UEquipmentWidget::InOutItemSlot(USlotWidget* ItemSlot)
 {
 	EItemType ItemType = ItemSlot->SlotData.ItemData.ItemType;
 	switch (ItemType)
 	{
-		//¹«±â//
+		//ï¿½ï¿½ï¿½ï¿½//
 		case EItemType::Weapon:
 		{
-			//Info¿¡ ¸Â°Ô ÇØ´ç ½½·ÔÀÇ À¯¹«¸¦ ÆÄ¾ÇÇØ ½ÇÇà½ÃÅ´.//
+			//Infoï¿½ï¿½ ï¿½Â°ï¿½ ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ä¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Å´.//
 			if (Info.HandType == EEquipHand::Left ? L_WeaponSlotArray[Info.SlotIndex]->SlotData.IsSet() : R_WeaponSlotArray[Info.SlotIndex]->SlotData.IsSet())
 			{
-				//ÇØ´ç½½·Ô¿¡ ¶È°°Àº ¾ÆÀÌÅÛÀÏ°æ¿ì »èÁ¦¸¸ÇÔ. (ÇØ´ç break´Â ItemTypeÀ» ÇØÁ¦¿¡ ÇØ´çÇÔ.)//
+				//ï¿½Ø´ç½½ï¿½Ô¿ï¿½ ï¿½È°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½. (ï¿½Ø´ï¿½ breakï¿½ï¿½ ItemTypeï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ø´ï¿½ï¿½ï¿½.)//
 				if (*InventoryComponent->GetItem(EItemType::Weapon, Info.SlotIndex, Info.HandType) == ItemSlot->SlotData)
 				{
 					InventoryComponent->RemoveEquipItem(ItemSlot->SlotData, Info.SlotIndex, Info.HandType);
 					break;
 				}
-				//ÇØ´ç½½·ÔÀÇ ¾ÆÀÌÅÛÀÌ ´Ù¸¦°æ¿ì »èÁ¦ÈÄ °è¼Ó ½ÇÇàÇÔ.//
+				//ï¿½Ø´ç½½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.//
 				else
 				{
 					InventoryComponent->RemoveEquipItem(*InventoryComponent->GetItem(EItemType::Weapon, Info.SlotIndex, Info.HandType), Info.SlotIndex, Info.HandType);
 				}
 			}
 			
-			//¿ÞÂÊ ¹«±â ¹Ýº¹¹®.(ÇØ´ç break´Â for¹® ÇØÁ¦¿¡ ÇØ´çÇÔ.)//
+			//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ýºï¿½ï¿½ï¿½.(ï¿½Ø´ï¿½ breakï¿½ï¿½ forï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ø´ï¿½ï¿½ï¿½.)//
 			for (uint8 i = 0; i < 3; i++)
 			{
 				if (FInventoryData* Item = InventoryComponent->GetItem(EItemType::Weapon, i, EEquipHand::Left))
@@ -233,7 +233,7 @@ void UEquipmentWidget::InOutItemSlot(USlotWidget* ItemSlot)
 					}
 				}
 			}
-			//¿À¸¥ÂÊ ¹«±â ¹Ýº¹¹®.(ÀÌÇÏ µ¿¹®.)//
+			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ýºï¿½ï¿½ï¿½.(ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.)//
 			for (uint8 i = 0; i < 3; i++)
 			{
 				if (FInventoryData* Item = InventoryComponent->GetItem(EItemType::Weapon, i, EEquipHand::Right))
@@ -252,7 +252,7 @@ void UEquipmentWidget::InOutItemSlot(USlotWidget* ItemSlot)
 		break;
 		///////
 	
-		//Çï¸ä//
+		//ï¿½ï¿½ï¿½//
 		case EItemType::Helmet:
 		{
 			if (*InventoryComponent->GetItem(EItemType::Helmet) == ItemSlot->SlotData)
@@ -268,7 +268,7 @@ void UEquipmentWidget::InOutItemSlot(USlotWidget* ItemSlot)
 		break;
 		////////
 	
-		//°¡½¿//
+		//ï¿½ï¿½ï¿½ï¿½//
 		case EItemType::Armor:
 		{
 			if (*InventoryComponent->GetItem(EItemType::Armor) == ItemSlot->SlotData)
@@ -284,7 +284,7 @@ void UEquipmentWidget::InOutItemSlot(USlotWidget* ItemSlot)
 		break;
 		/////////
 	
-		//¹ÙÁö//
+		//ï¿½ï¿½ï¿½ï¿½//
 		case EItemType::Pant:
 		{
 			if (*InventoryComponent->GetItem(EItemType::Pant) == ItemSlot->SlotData)
@@ -300,7 +300,7 @@ void UEquipmentWidget::InOutItemSlot(USlotWidget* ItemSlot)
 		break;
 		////////
 	
-		//½Å¹ß//
+		//ï¿½Å¹ï¿½//
 		case EItemType::Boots:
 		{
 			if (*InventoryComponent->GetItem(EItemType::Boots) == ItemSlot->SlotData)
@@ -316,26 +316,26 @@ void UEquipmentWidget::InOutItemSlot(USlotWidget* ItemSlot)
 		break;
 		////////
 
-		//È­»ì//
+		//È­ï¿½ï¿½//
 		case EItemType::Arrow:
 		{
-			// ÇØ´ç ½½·Ô¿¡ ¾ÆÀÌÅÛÀÌ ÀÖÀ» °æ¿ì. //
+			// ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½Ô¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½. //
 			if (ArrowSlotArray[Info.SlotIndex]->SlotData.IsSet())
 			{
-				// ÇØ´ç ½½·ÔÀÌ °°Àº ¾ÆÀÌÅÛÀÏ °æ¿ì ÇØÁ¦ ÈÄ break ÇÔ(breakÀº switch¹®¿¡ ÇØ´çÇÔ). //
+				// ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ break ï¿½ï¿½(breakï¿½ï¿½ switchï¿½ï¿½ï¿½ï¿½ ï¿½Ø´ï¿½ï¿½ï¿½). //
 				if (*InventoryComponent->GetItem(EItemType::Arrow, Info.SlotIndex) == ItemSlot->SlotData)
 				{
 					InventoryComponent->RemoveEquipItem(ItemSlot->SlotData, Info.SlotIndex);
 					break;
 				}
-				// ÇØ´ç ½½·ÔÀÌ ´Ù¸¥ ¾ÆÀÌÅÛÀÏ °æ¿ì ÇØÁ¦ÇÔ. //
+				// ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½. //
 				else
 				{
 					InventoryComponent->RemoveEquipItem(*InventoryComponent->GetItem(EItemType::Arrow, Info.SlotIndex));
 				}
 			}
 
-			// ÇØ´ç ¾ÆÀÌÅÛÀÌ ´Ù¸¥ ½½·Ô¿¡ ÀåÂø µÇÀÖ´ÂÁö °ËÅä ÈÄ ÇØÁ¦ ÇÔ. //
+			// ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¸ï¿½ ï¿½ï¿½ï¿½Ô¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ö´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½. //
 			for (uint8 i = 0; i < ArrowSlotArray.Num(); i++)
 			{
 				if (ArrowSlotArray[i]->SlotData == ItemSlot->SlotData)
@@ -345,33 +345,33 @@ void UEquipmentWidget::InOutItemSlot(USlotWidget* ItemSlot)
 				}
 			}
 
-			// ÇØ´ç ¾ÆÀÌÅÛÀ» ÀåÂø ÇÔ. //
+			// ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½. //
 			InventoryComponent->AddEquipItem(ItemSlot->SlotData, Info.SlotIndex);
 		}
 		break;
 		////////
 	
-		//¼Ò¸ðÇ°//
+		//ï¿½Ò¸ï¿½Ç°//
 		case EItemType::Expendable:
 		{
-			//operator ==ÀÇ ¿À·ù·Î IsSetÀ¸·Î ÀÌ¿ëÇØ ¾ÆÀÌÅÛÀÌ ÀÖÀ»¶§¿Í ¾øÀ»¶§¸¦ ±¸ºÐÁö¾î ÅëÄâÇÏ°Ô ¸¸µë//
+			//operator ==ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ IsSetï¿½ï¿½ï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½//
 			if (ExpendableSlotArray[Info.SlotIndex]->SlotData.IsSet())
 			{
-				//½½·ÔÀÇ ¾ÆÀÌÅÛÀÌ ¼±ÅÃ ½½·Ô¾ÆÀÌÅÛ°ú °°À» °æ¿ì ÇØÃ¼¸¸ÇÔ ÇØ´ç break´Â ItemType ½ºÀ§Ä¡¹®¿¡ ÇØ´çÇÔ.//
+				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ô¾ï¿½ï¿½ï¿½ï¿½Û°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½ ï¿½Ø´ï¿½ breakï¿½ï¿½ ItemType ï¿½ï¿½ï¿½ï¿½Ä¡ï¿½ï¿½ï¿½ï¿½ ï¿½Ø´ï¿½ï¿½ï¿½.//
 				if (*InventoryComponent->GetItem(EItemType::Expendable, Info.SlotIndex) == ItemSlot->SlotData)
 				{
 					InventoryComponent->RemoveEquipItem(ItemSlot->SlotData, Info.SlotIndex);
 					InventoryComponent->RefreshExpendableIndex();
 					break;
 				}
-				//´Ù¸¥ ¾ÆÀÌÅÛÀÏ °æ¿ì ÇØÁ¦¸¸ ÇÔ.//
+				//ï¿½Ù¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½.//
 				else
 				{
 					InventoryComponent->RemoveEquipItem(*InventoryComponent->GetItem(EItemType::Expendable, Info.SlotIndex));
 				}
 			}
 			
-			//for¹®À¸·Î Å½»öÈÄ ÇØ´ç¾ÆÀÌÅÛ°ú °°Àº ¾ÆÀÌÅÛÀÌ ÀÖÀ¸¸é ÇØÁ¦ÈÄ ÀåÂøÇÔ. (ÇØ´ç break´Â Å½»öÇÏ´Â for¹®¿¡ ÇØ´çÇÔ.)//
+			//forï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å½ï¿½ï¿½ï¿½ï¿½ ï¿½Ø´ï¿½ï¿½ï¿½ï¿½ï¿½Û°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½. (ï¿½Ø´ï¿½ breakï¿½ï¿½ Å½ï¿½ï¿½ï¿½Ï´ï¿½ forï¿½ï¿½ï¿½ï¿½ ï¿½Ø´ï¿½ï¿½ï¿½.)//
 			for (uint8 i = 0; i < ExpendableSlotArray.Num(); i++)
 			{
 				if (ExpendableSlotArray[i]->SlotData == ItemSlot->SlotData)
@@ -405,7 +405,7 @@ bool UEquipmentWidget::IsActiveEquipMenu()
 	return true;
 }
 
-//Data·Î º¯Çü//
+//Dataï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½//
 void UEquipmentWidget::RefreshEquipment()
 {
 	//Left weapon//

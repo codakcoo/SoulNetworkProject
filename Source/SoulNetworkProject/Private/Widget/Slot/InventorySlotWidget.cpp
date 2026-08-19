@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 
 #include "Widget/Slot/InventorySlotWidget.h"
@@ -44,7 +44,7 @@ void UInventorySlotWidget::NativeConstruct()
 	}
 }
 
-//Data·Î º¯Çü//
+//Dataï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½//
 void UInventorySlotWidget::UpdateStateMenu(USlotWidget* ItemSlot)
 {
 	

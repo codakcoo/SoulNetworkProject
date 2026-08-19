@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 
 #include "Widget/Slot/Spell/SpellType_InventorySlotWidget.h"
@@ -57,9 +57,9 @@ void USpellType_InventorySlotWidget::NativeConstruct()
 	SpellSlotArray.Add(SpellSlot_For);
 
 
-	AllSetSlotType();					//ÀåºñÃ¢ Å¸ÀÔ°ú ÀÎµ¦½º¼³Á¤//
-	CurrentSlotIndex.Reset();			//½½Æý¼±ÅÃ½Ã ±× ½½·ÔÀÇ »óÅÂµéÀ» °¡Á®¿È//
-	//RefreshEquipment();				//ÀåºñÃ¢À» »õ·Î°íÄ§ÇÔ//
+	AllSetSlotType();					//ï¿½ï¿½ï¿½Ã¢ Å¸ï¿½Ô°ï¿½ ï¿½Îµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½//
+	CurrentSlotIndex.Reset();			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Âµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½//
+	//RefreshEquipment();				//ï¿½ï¿½ï¿½Ã¢ï¿½ï¿½ ï¿½ï¿½ï¿½Î°ï¿½Ä§ï¿½ï¿½//
 	BackEquipSlot();
 	RefreshSpellMenu();
 	RefreshItemSlot();
@@ -79,10 +79,10 @@ void USpellType_InventorySlotWidget::CallFirstMenu()
 	//PlayAnimation(Blink);
 }
 
-//½½·Ô Å¸ÀÔÁ¤ÇÏ±â//
+//ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½//
 void USpellType_InventorySlotWidget::AllSetSlotType()
 {
-	//½ºÆç ÀÎµ¦½º//
+	//ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½//
 	for (int8 i = 0; i < SpellSlotArray.Num(); i++)
 	{
 		SpellSlotArray[i]->SetSlotIndex(i);
@@ -121,23 +121,23 @@ void USpellType_InventorySlotWidget::InOutItemSlot(USlotWidget* ItemSlot)
 	if(!ItemSlot->SlotData.IsSet() || ItemType != EItemType::Spell || !CurrentSlotIndex.IsSet() || MenuType != EMenuType_Spell::Select) return;
 
 	
-	//operator ==ÀÇ ¿À·ù·Î IsSetÀ¸·Î ÀÌ¿ëÇØ ¾ÆÀÌÅÛÀÌ ÀÖÀ»¶§¿Í ¾øÀ»¶§¸¦ ±¸ºÐÁö¾î ÅëÄâÇÏ°Ô ¸¸µë//
+	//operator ==ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ IsSetï¿½ï¿½ï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½//
 	if (SpellSlotArray[CurrentSlotIndex.GetValue()]->SlotData.IsSet())
 	{
-		//½½·ÔÀÇ ¾ÆÀÌÅÛÀÌ ¼±ÅÃ ½½·Ô¾ÆÀÌÅÛ°ú °°À» °æ¿ì ÇØÃ¼¸¸ÇÔ ÇØ´ç break´Â ItemType ½ºÀ§Ä¡¹®¿¡ ÇØ´çÇÔ.//
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ô¾ï¿½ï¿½ï¿½ï¿½Û°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½ ï¿½Ø´ï¿½ breakï¿½ï¿½ ItemType ï¿½ï¿½ï¿½ï¿½Ä¡ï¿½ï¿½ï¿½ï¿½ ï¿½Ø´ï¿½ï¿½ï¿½.//
 		if (SpellSlotArray[CurrentSlotIndex.GetValue()]->SlotData == ItemSlot->SlotData)
 		{
 			InventoryComponent->RemoveEquipItem(ItemSlot->SlotData, CurrentSlotIndex.GetValue());
 			InventoryComponent->RefreshSpellIndex();
 		}
-		//´Ù¸¥ ¾ÆÀÌÅÛÀÏ °æ¿ì ÇØÁ¦¸¸ ÇÔ.//
+		//ï¿½Ù¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½.//
 		else
 		{
-			//ÇØ´ç ¾ÆÀÌÅÛ ½½·ÔÀÇ equipÀ» ÇØÁ¦½ÃÅ´.//
+			//ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ equipï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å´.//
 			InventoryComponent->RemoveEquipItem(*InventoryComponent->GetItem(EItemType::Spell, CurrentSlotIndex.GetValue()), CurrentSlotIndex.GetValue());
 			for (uint8 i = 0; i < SpellSlotArray.Num(); i++)
 			{
-				//º¯°æÇÏ°íÀÚ ÇÏ´Â ¾ÆÀÌÅÛÀÌ Áßº¹µÇ´Â °÷ÀÌ ÀÖ´ÂÁö °Ë»ç ÈÄ ÀÖ´Â °æ¿ì Áßº¹µÇ´Â °÷À» equip ÇØÁ¦½ÃÅ´.//
+				//ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ï¿½ï¿½ ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ßºï¿½ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ ï¿½ßºï¿½ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½ï¿½ equip ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å´.//
 				if (SpellSlotArray[i]->SlotData == ItemSlot->SlotData)
 				{
 					InventoryComponent->RemoveEquipItem(ItemSlot->SlotData, i);
@@ -145,14 +145,14 @@ void USpellType_InventorySlotWidget::InOutItemSlot(USlotWidget* ItemSlot)
 					break;
 				}
 			}
-			//ÀåÂø.//
+			//ï¿½ï¿½ï¿½ï¿½.//
 			InventoryComponent->AddEquipItem(ItemSlot->SlotData, CurrentSlotIndex.GetValue());
 			InventoryComponent->RefreshSpellIndex();
 		}
 	}
 	else
 	{
-		//for¹®À¸·Î Å½»öÈÄ ÇØ´ç¾ÆÀÌÅÛ°ú °°Àº ¾ÆÀÌÅÛÀÌ ÀÖÀ¸¸é ÇØÁ¦ÈÄ ÀåÂøÇÔ. (ÇØ´ç break´Â Å½»öÇÏ´Â for¹®¿¡ ÇØ´çÇÔ.)//
+		//forï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å½ï¿½ï¿½ï¿½ï¿½ ï¿½Ø´ï¿½ï¿½ï¿½ï¿½ï¿½Û°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½. (ï¿½Ø´ï¿½ breakï¿½ï¿½ Å½ï¿½ï¿½ï¿½Ï´ï¿½ forï¿½ï¿½ï¿½ï¿½ ï¿½Ø´ï¿½ï¿½ï¿½.)//
 		for (uint8 i = 0; i < SpellSlotArray.Num(); i++)
 		{
 			if (SpellSlotArray[i]->SlotData == ItemSlot->SlotData)
@@ -261,7 +261,7 @@ bool USpellType_InventorySlotWidget::IsActiveEquipMenu()
 	return true;
 }
 
-//Data·Î º¯Çü//
+//Dataï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½//
 void USpellType_InventorySlotWidget::RefreshSpellMenu()
 {
 	for (int8 i = 0; i < SpellSlotArray.Num(); i++)
@@ -300,34 +300,34 @@ void USpellType_InventorySlotWidget::RefreshItemSlot()
 	const UEnum* EnumObject = GetEnumObject(EItemType::Spell);
 	if (!EnumObject) return;
 
-	if (SelectType == ESpellType::None)	//¸ðµç ½ºÆçÁ¾·ù Ãß°¡.//
+	if (SelectType == ESpellType::None)	//ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½.//
 	{
 		UGradeSlotWidget* CreateCurrentSlot = CreateCurrentSlot = CreateWidget<UGradeSlotWidget>(this, GradeRowClass);
-		//¿ì¼±¼øÀ§ºÎÅÍ Â÷·Ê´ë·Î Å½»öÇÏ¿© ÇØ´ç¸Â´Â ¾ÆÀÌÅÛÀ» ¼øÂ÷ÀûÀ¸·Î Ãß°¡ÇØÁÜ.//
+		//ï¿½ì¼±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ê´ï¿½ï¿½ Å½ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½Ø´ï¿½Â´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ï¿½ï¿½ï¿½ï¿½.//
 		for (int8 i = 0; i < EnumObject->GetMaxEnumValue(); i++)
 		{
 			for (auto& Item : CategoryItems)
 			{
-				//¸¸¾àÀÇ ¿À·ù¸¦ ´ëºñÇØ Å¸ÀÔ°ú ¸Â´Â Data¸¸ Ãß°¡½ÃÅ´//
+				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½Ô°ï¿½ ï¿½Â´ï¿½ Dataï¿½ï¿½ ï¿½ß°ï¿½ï¿½ï¿½Å´//
 				if (GetItemEnumValue<FInventoryData>(Item) == i)
 				{
-					//GradeSlotÀÌ ´õ ÀÌ»ó Ãß°¡ÇÒ ¼ö ¾ø´Ù¸é »õ·Î »ý¼ºÇØÁÜ.//
+					//GradeSlotï¿½ï¿½ ï¿½ï¿½ ï¿½Ì»ï¿½ ï¿½ß°ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Ù¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.//
 					if (!CreateCurrentSlot->CanStackData())
 					{
 						RowIndex++;
 						CreateCurrentSlot = CreateWidget<UGradeSlotWidget>(this, GradeRowClass);
 					}
 
-					//»ý¼ºÀÌ ¿Ï·áµÇ¾úÀ» °æ¿ì.//
+					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½Ç¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½.//
 					if (CreateCurrentSlot)
 					{
-						//»õ·Î »ý¼ºµÈ GradeSlotÀÏ °æ¿ì GradeBox¿¡ ÀÚ¼ÕÀ¸·Î Ãß°¡½ÃÅ´.//
+						//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ GradeSlotï¿½ï¿½ ï¿½ï¿½ï¿½ GradeBoxï¿½ï¿½ ï¿½Ú¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ï¿½ï¿½Å´.//
 						if (CreateCurrentSlot->SlotStackCount() == 0)
 						{
 							GradeBox->AddChild(CreateCurrentSlot);
 						}
 
-						//Index·Î GradeSlotÀÇ Index¿Í ¾ÆÀÌÅÛ°ú ¾ÆÀÌÅÛÀÇ Index¸¦ ÁöÁ¤ÇØÁÜ.//
+						//Indexï¿½ï¿½ GradeSlotï¿½ï¿½ Indexï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Û°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Indexï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.//
 						CreateCurrentSlot->SetupRowIndex(RowIndex);
 						CreateCurrentSlot->UpdatedItemSlot(SlotIndex, Item);
 						SlotIndex++;
@@ -337,31 +337,31 @@ void USpellType_InventorySlotWidget::RefreshItemSlot()
 			}
 		}
 	}
-	else //¼±ÅÃÇÑ ½½·ÔÀÇ ¾ÆÀÌÅÛ¸¸ Ãß°¡.//
+	else //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Û¸ï¿½ ï¿½ß°ï¿½.//
 	{
 		UGradeSlotWidget* CreateCurrentSlot = CreateCurrentSlot = CreateWidget<UGradeSlotWidget>(this, GradeRowClass);
 		for (auto& Item : CategoryItems)
 		{
-			//¸¸¾àÀÇ ¿À·ù¸¦ ´ëºñÇØ Å¸ÀÔ°ú ¸Â´Â Data¸¸ Ãß°¡½ÃÅ´//
+			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½Ô°ï¿½ ï¿½Â´ï¿½ Dataï¿½ï¿½ ï¿½ß°ï¿½ï¿½ï¿½Å´//
 			if (GetItemEnumValue<FInventoryData>(Item) == (uint8)SelectType)
 			{
-				//GradeSlotÀÌ ´õ ÀÌ»ó Ãß°¡ÇÒ ¼ö ¾ø´Ù¸é »õ·Î »ý¼ºÇØÁÜ.//
+				//GradeSlotï¿½ï¿½ ï¿½ï¿½ ï¿½Ì»ï¿½ ï¿½ß°ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Ù¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.//
 				if (!CreateCurrentSlot->CanStackData())
 				{
 					RowIndex++;
 					CreateCurrentSlot = CreateWidget<UGradeSlotWidget>(this, GradeRowClass);
 				}
 
-				//»ý¼ºÀÌ ¿Ï·áµÇ¾úÀ» °æ¿ì.//
+				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½Ç¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½.//
 				if (CreateCurrentSlot)
 				{
-					//»õ·Î »ý¼ºµÈ GradeSlotÀÏ °æ¿ì GradeBox¿¡ ÀÚ¼ÕÀ¸·Î Ãß°¡½ÃÅ´.//
+					//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ GradeSlotï¿½ï¿½ ï¿½ï¿½ï¿½ GradeBoxï¿½ï¿½ ï¿½Ú¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ï¿½ï¿½Å´.//
 					if (CreateCurrentSlot->SlotStackCount() == 0)
 					{
 						GradeBox->AddChild(CreateCurrentSlot);
 					}
 
-					//Index·Î GradeSlotÀÇ Index¿Í ¾ÆÀÌÅÛ°ú ¾ÆÀÌÅÛÀÇ Index¸¦ ÁöÁ¤ÇØÁÜ.//
+					//Indexï¿½ï¿½ GradeSlotï¿½ï¿½ Indexï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Û°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Indexï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.//
 					CreateCurrentSlot->SetupRowIndex(RowIndex);
 					CreateCurrentSlot->UpdatedItemSlot(SlotIndex, Item);
 					SlotIndex++;

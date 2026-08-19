@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 
 #include "LobbyGameMode.h"
@@ -35,6 +35,6 @@ void ALobbyGameMode::StartGame()
 	if(!GameInstance || !GetWorld()) return;
 	
 	GameInstance->StartSession();
-	bUseSeamlessTravel = true;	//Æ®·»Áö¼Ç¸ÊÀ» »ç¿ëÇÏ´Â°æ¿ì ´Ù¸¥¸ÊÀ¸·Î ·Îµå½Ã¿¡ Æ®·»Áö¼Ç¸ÊÀ¸·Î ¸ÕÀú ÀÌµ¿ÇÑ ´ÙÀ½ ¸ÊÀ» ·Îµå ½ÃÄÑÁÝ´Ï´Ù. bUseSeamlessTravel = true·Î ÇØÁà¾ß ÀÌµ¿ÀÌ °¡´ÉÇÏ´Ù.//
-	GetWorld()->ServerTravel("/Game/Maps/ThirdPersonExampleMap?listen"); //¼­¹öÀÇ ÇÕ·ùÇÑ Å¬¶óÀÌ¾ðÆ®µéÀº ¼­¹ö¿¡¼­ ¿¬°áÀ» ²÷Àº´ÙÀ½ »õ¸ÊÀ¸·Î ´Ù½Ã·ÎµåÇØ¼­ ÇÁ¸®Â¡ÀÌ °É¸²//
+	bUseSeamlessTravel = true;	//Æ®ï¿½ï¿½ï¿½ï¿½ï¿½Ç¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´Â°ï¿½ï¿½ ï¿½Ù¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½Ã¿ï¿½ Æ®ï¿½ï¿½ï¿½ï¿½ï¿½Ç¸ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ý´Ï´ï¿½. bUseSeamlessTravel = trueï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.//
+	GetWorld()->ServerTravel("/Game/Maps/ThirdPersonExampleMap?listen"); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Õ·ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½Ì¾ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù½Ã·Îµï¿½ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½ï¿½Â¡ï¿½ï¿½ ï¿½É¸ï¿½//
 }

@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -61,10 +61,10 @@ public:
 	FInventoryData* GetCountItem(FName DataName);
 	FInventoryData* GetItemForSameName(FName DataName);
 
-	FORCEINLINE void SetSpellIndex(uint8 Index);
-	FORCEINLINE void SetExpendableIndex(uint8 Index);
-	FORCEINLINE void SetL_AttachIndex(uint8 Index);
-	FORCEINLINE void SetR_AttachIndex(uint8 Index);
+	void SetSpellIndex(uint8 Index);
+	void SetExpendableIndex(uint8 Index);
+	void SetL_AttachIndex(uint8 Index);
+	void SetR_AttachIndex(uint8 Index);
 
 	FORCEINLINE uint8 GetSpellIndex() const { return SpellIndex; }
 	FORCEINLINE uint8 GetExpendableIndex() const { return ExpendableIndex; }
@@ -141,7 +141,7 @@ private:
 	void SetEquipType(FInventoryData Item, uint8 Index, EEquipHand HandType);
 
 
-	//true¸é 0°³°Å³ª ¸¶Áö¸· ¾ÆÀÌÅÛÀÌ°í, false¸é µÑ ´Ù ÇØ´ç ¾ÈÇÔ.//
+	//trueï¿½ï¿½ 0ï¿½ï¿½ï¿½Å³ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì°ï¿½, falseï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ï¿½.//
 	UFUNCTION()
 	int8 GetMaxExpendableIndex();
 	UFUNCTION()

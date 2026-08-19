@@ -30,6 +30,14 @@ public class SoulNetworkProject : ModuleRules
 		// Uncomment if you are using Slate UI
 		PrivateDependencyModuleNames.AddRange(new string[] { "Slate", "SlateCore", "ReplicationGraph" });
 		
+		// GameplayDebugger 는 Shipping / Test 를 제외한 구성에서만 존재한다.
+		if (Target.bBuildDeveloperTools ||
+		    (Target.Configuration != UnrealTargetConfiguration.Shipping &&
+		     Target.Configuration != UnrealTargetConfiguration.Test))
+		{
+			PrivateDependencyModuleNames.Add("GameplayDebugger");
+		}
+		
 		// Uncomment if you are using online features
 		// PrivateDependencyModuleNames.Add("OnlineSubsystem");
 

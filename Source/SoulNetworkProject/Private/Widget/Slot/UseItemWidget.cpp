@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 
 #include "Widget/Slot/UseItemWidget.h"
@@ -10,7 +10,7 @@
 #include "Sound/SoundCue.h"
 
 
-//Data·Î º¯Çü//
+//Dataï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½//
 void UUseItemWidget::SwitchingUseItem(FInventoryData& UseItem, bool bWidgetAnim)
 {
 	//if (UseItem) AddSlotItem(UseItem);
@@ -20,7 +20,7 @@ void UUseItemWidget::SwitchingUseItem(FInventoryData& UseItem, bool bWidgetAnim)
 }
 
 
-//Data·Î º¯Çü//
+//Dataï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½//
 void UUseItemWidget::AddSlotItem(FInventoryData UseItem)
 {
 	SlotData = UseItem;
@@ -28,7 +28,7 @@ void UUseItemWidget::AddSlotItem(FInventoryData UseItem)
 }
 
 
-//Data·Î º¯Çü//
+//Dataï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½//
 void UUseItemWidget::RemoveSlotItem()
 {
 	SlotData.ResetValue();
@@ -36,7 +36,7 @@ void UUseItemWidget::RemoveSlotItem()
 }
 
 
-//Data·Î º¯Çü//
+//Dataï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½//
 void UUseItemWidget::UpdateSlot()
 {
 	if (SlotData.IsSet())

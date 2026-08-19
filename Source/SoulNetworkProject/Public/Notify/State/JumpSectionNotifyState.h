@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -12,9 +12,9 @@
  UENUM(BlueprintType)
  enum class EJumpCondition : uint8
  {
-	Falling		UMETA(DisplayName = "Falling"),		// ¶³¾îÁö´ÂÁß¿¡ 
-	Timer		UMETA(DisplayName = "Timer"),		// Å¸ÀÌ¸Ó
-	Trigger		UMETA(DisplayName = "Trigger")		// Æ®¸®°Å (End¿¡¼­ È£Ãâ µÊ.)
+	Falling		UMETA(DisplayName = "Falling"),		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß¿ï¿½ 
+	Timer		UMETA(DisplayName = "Timer"),		// Å¸ï¿½Ì¸ï¿½
+	Trigger		UMETA(DisplayName = "Trigger")		// Æ®ï¿½ï¿½ï¿½ï¿½ (Endï¿½ï¿½ï¿½ï¿½ È£ï¿½ï¿½ ï¿½ï¿½.)
  };
 
 UCLASS()

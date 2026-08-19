@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #include "CoreMinimal.h"
 #include "Runtime/CoreUObject/Public/UObject/Class.h"
@@ -226,7 +226,7 @@ UEnum* GetEnumObject(T ItemTypeObject)
 #endif
 }
 
-//Ã£Áö ¸øÇÒ°æ¿ì 255¸¦ ¶ç¿ò//
+//Ã£ï¿½ï¿½ ï¿½ï¿½ï¿½Ò°ï¿½ï¿½ 255ï¿½ï¿½ ï¿½ï¿½ï¿½//
 template<typename T>
 uint8 GetMaxEnumValue(T Enum)
 {

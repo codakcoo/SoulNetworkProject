@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 
 #include "SoulNetworkProject/ItemState.h"
@@ -16,21 +16,21 @@ struct FDataContent
 	GENERATED_USTRUCT_BODY()
 
 public:
-	//ÀÚ½ÅÀÌ °¡Á®¿Ã Å×ÀÌÅÍÀÇ ÀÌ¸§À» Á¤È®È÷ °¡Á®¿Í¾ßÇÔ.//
+	//ï¿½Ú½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½È®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¾ï¿½ï¿½ï¿½.//
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FName DataName;
 
-	//Àåºñ ÀÏ°æ¿ì ¾ÆÀÌÅÛ ·¹º§, ¼ÒºñÇ° ÀÏ°æ¿ì ¾ÆÀÌÅÛ °¹¼öÀÓ. (¹«±â : 0 ~ 8·¹º§, ¿Ê : 0 ~ 5·¹º§, ¼ÒºñÇ° : 99°³ ±îÁö.)//
+	//ï¿½ï¿½ï¿½ ï¿½Ï°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½Òºï¿½Ç° ï¿½Ï°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½. (ï¿½ï¿½ï¿½ï¿½ : 0 ~ 8ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ : 0 ~ 5ï¿½ï¿½ï¿½ï¿½, ï¿½Òºï¿½Ç° : 99ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.)//
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	uint8 DataCount;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	bool bEquip = false;
 
-	//ÇØ´ç ÀÎµ¦½º¿¡ ¾ÆÀÌÅÛÀÌ Á¸ÀçÇÒ°æ¿ì Â÷·Ê´ë·Î »ó¼ÓµÊ.//
+	//ï¿½Ø´ï¿½ ï¿½Îµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ò°ï¿½ï¿½ ï¿½ï¿½ï¿½Ê´ï¿½ï¿½ ï¿½ï¿½Óµï¿½.//
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (EditCondition = "bEquip == true"))
 	uint8 EquipIndex = 0;
-	//ÀÚ½ÅÀÌ ÁöÁ¤ÇØµµ µÇ¸ç NoneÀ¸·Î ÁöÁ¤½Ã ±×³É ÀåÂøÀÌ ¾ÈµÇ¸ç ±×³É ÀÎº¥Åä¸®¿¡ »ó¼ÓµÊ.//
+	//ï¿½Ú½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Øµï¿½ ï¿½Ç¸ï¿½ Noneï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½×³ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ÈµÇ¸ï¿½ ï¿½×³ï¿½ ï¿½Îºï¿½ï¿½ä¸®ï¿½ï¿½ ï¿½ï¿½Óµï¿½.//
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (EditCondition = "bEquip == true"))
 	EEquipHand HandType;
 
@@ -214,7 +214,7 @@ public:
 	{
 		bool bIsSet = false;
 
-		if (ManaCost > 0.f && MaxLowAttackCount > 0 && LowAttackMt)// || AOEMt)// || MaxHeavyAttackCount > 0) //µÚ ÁÖ¼®µéÀº Á¤ÀÇ ÇÊ¿ä//
+		if (ManaCost > 0.f && MaxLowAttackCount > 0 && LowAttackMt)// || AOEMt)// || MaxHeavyAttackCount > 0) //ï¿½ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½//
 		{
 			bIsSet = true;
 		}
@@ -608,7 +608,7 @@ public:
 	}
 };
 
-//DataTable RowÃ£±â//
+//DataTable RowÃ£ï¿½ï¿½//
 template<class T>
 T* FindRow(UDataTable* DataTableAsset, FName RowName, const FString& ContextString, bool bWarnIfRowMissing = true)
 {
@@ -635,7 +635,7 @@ T* FindRow(UDataTable* DataTableAsset, FName RowName, const FString& ContextStri
 	}
 }
 
-//255¶ó°í ·Î±×°¡ ¶ß¸é µ¥ÀÌÅÍ¸¦ Ã£Áö ¸øÇÔ.//
+//255ï¿½ï¿½ï¿½ ï¿½Î±×°ï¿½ ï¿½ß¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ Ã£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.//
 template<typename T>
 uint8 GetItemEnumValue(FInventoryData& CheckData)
 {

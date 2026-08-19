@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -38,7 +38,7 @@ public:
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
 public:
-	//¿þÆù Æ®·¹ÀÌ½º//
+	//ï¿½ï¿½ï¿½ï¿½ Æ®ï¿½ï¿½ï¿½Ì½ï¿½//
 	UFUNCTION()
 	void WeaponTrace(EEquipHand HandType, EAttackType AttackType, FName StartSocket = NAME_None, FName EndSocket = NAME_None);
 	UFUNCTION(Server, Reliable)
@@ -49,7 +49,7 @@ public:
 	bool GetGuardup() { return bGuardup; }
 
 
-	//Ã³Çü//
+	//Ã³ï¿½ï¿½//
 	UFUNCTION(Server, Reliable)
 	void Server_Attacker(class ACharacterBase* VictimPawn, FName PlaySection);
 	UFUNCTION(NetMulticast, Reliable)
@@ -66,13 +66,13 @@ public:
 	void Server_ExecutionDamage();
 	////////
 
-	//½ºÅÏ//
+	//ï¿½ï¿½ï¿½ï¿½//
 	UFUNCTION(Server, Reliable, WithValidation)
 	void Server_RunStun();
 	UFUNCTION(NetMulticast, Reliable, WithValidation)
 	void Multicast_RunStun();
 
-	//¹«±â ÀÌÆåÆ®//
+	//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®//
 
 	////////////////
 
@@ -83,7 +83,7 @@ public:
 	
 	//FORCEINLINE void SetAttackType(EAttackType InType);
 	//Get// //Set//
-	FORCEINLINE void SetParryingParam(float DelayTime);
+	void SetParryingParam(float DelayTime);
 
 	FORCEINLINE bool GetParrying() const { return bParrying; }
 
@@ -231,7 +231,7 @@ protected:
 	float BasicTraceSize = 20.f;
 	///////////////
 
-	//Ã³Çü//
+	//Ã³ï¿½ï¿½//
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Execution")
 	bool bAlwaysUseForwardTrigger = false;
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Execution")

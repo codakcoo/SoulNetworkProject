@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -22,11 +22,11 @@ protected:
 	virtual void NotifyEnd(USkeletalMeshComponent* MeshComp, UAnimSequenceBase* Animation) override;
 
 public:
-	//ÇØ´ç¼ÒÄ¹¿¡¼­ Æ®·¹ÀÌ½º ³ª¿À°ÔÇÔ(¾ÕÂÊ)//
+	//ï¿½Ø´ï¿½ï¿½Ä¹ï¿½ï¿½ï¿½ï¿½ Æ®ï¿½ï¿½ï¿½Ì½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½)//
 	UPROPERTY(EditAnywhere, Category = "Trace")
 	FName F_SocketName = NAME_None;
 	
-	//ÇØ´ç¼ÒÄÏ¿¡¼­ Æ®·¹ÀÌ½º ³ª¿À°ÔÇÔ(µÚÂÊ)//
+	//ï¿½Ø´ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½ Æ®ï¿½ï¿½ï¿½Ì½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½)//
 	UPROPERTY(EditAnywhere, Category = "Trace")
 	FName B_SocketName = NAME_None;
 };

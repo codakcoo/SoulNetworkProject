@@ -1,11 +1,10 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 
 #include "SoulNetworkReplicationGraph.h"
 #include "Classes/PlayerControllerBase.h"
 #include "Classes/PlayerCharacter.h"
 #include "Classes/SmartObject/WorldPickupItem.h"
-#include "Classes/PickupActor.h"
 
 #if WITH_GAMEPLAY_DEBUGGER
 	#include "GameplayDebuggerCategoryReplicator.h"
@@ -83,11 +82,11 @@ void USoulNetworkReplicationGraph::InitGlobalActorClassSettings()
 	Super::InitGlobalActorClassSettings();
 
 	/*
-	* ÇÁ·Î±×·¡¹Ö ¹æ½ÄÀ¸·Î ±ÔÄ¢À» ÀÛ¼ºÇÕ´Ï´Ù.
+	* ï¿½ï¿½ï¿½Î±×·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¢ï¿½ï¿½ ï¿½Û¼ï¿½ï¿½Õ´Ï´ï¿½.
 	*/
 	auto AddInfo = [&]( UClass* Class, EClassRepNodeMapping Mapping) { ClassRepNodePolicies.Set(Class, Mapping); };
 
-	AddInfo(AWorldPickupItem::StaticClass(),			EClassRepNodeMapping::NotRouted);		// Á¾¼Ó ÇàÀ§ÀÚ º¹Á¦(Pawn)¸¦ ÅëÇØ Ã³¸®µË´Ï´Ù.
+	AddInfo(AWorldPickupItem::StaticClass(),			EClassRepNodeMapping::NotRouted);		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(Pawn)ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½Ë´Ï´ï¿½.
 	AddInfo(APlayerState::StaticClass(),				EClassRepNodeMapping::NotRouted);
 	AddInfo(ALevelScriptActor::StaticClass(),			EClassRepNodeMapping::NotRouted);
 	AddInfo(AReplicationGraphDebugActor::StaticClass(), EClassRepNodeMapping::NotRouted);				// Not needed. Replicated special case inside RepGraph
@@ -109,19 +108,19 @@ void USoulNetworkReplicationGraph::InitGlobalActorClassSettings()
 			continue;
 		}
 
-		// SKEL ¶Ç´Â REINST Å¬·¡½º´Â ³Ñ±é´Ï´Ù. //
+		// SKEL ï¿½Ç´ï¿½ REINST Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ±ï¿½Ï´ï¿½. //
 		if (Class->GetName().StartsWith(TEXT("SKEL_")) || Class->GetName().StartsWith(TEXT("REINST_")))
 		{
 			continue;
 		}
 
 		// ------------------------------------------------ -------
-		// º¹Á¦µÈ Å¬·¡½ºÀÔ´Ï´Ù. ¾Æ·¡ÀÇ µÎ ¹øÂ° ÆÐ½º¸¦ À§ÇØ ÀÌ°ÍÀ» ÀúÀåÇÏ¼¼¿ä.
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½. ï¿½Æ·ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½Â° ï¿½Ð½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ì°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½.
 		// ------------------------------------------------ -------
 		// ------------------------------------------------ -------
 		AllReplicatedClasses.Add(Class);
 
-		// ¸Ê¿¡ ÀÌ¹Ì ÀÖ´Â °æ¿ì °Ç³Ê¶Ý´Ï´Ù(¸í½ÃÀûÀ¸·Î Ãß°¡µÊ). //
+		// ï¿½Ê¿ï¿½ ï¿½Ì¹ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ ï¿½Ç³Ê¶Ý´Ï´ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ï¿½ï¿½). //
 		if (ClassRepNodePolicies.Contains(Class, false))
 		{
 			continue;
@@ -138,7 +137,7 @@ void USoulNetworkReplicationGraph::InitGlobalActorClassSettings()
 		};
 
 		// ------------------------------------------------ ------------------------------------- ------------------------------------- ------------------
-		// FClassReplicationInfo¸¦ ¼³Á¤ÇÕ´Ï´Ù. ÀÌ´Â ±âº»ÀûÀ¸·Î Å¬·¡½ºº° º¹Á¦ ¼³Á¤ÀÔ´Ï´Ù. ÀÏºÎ´Â ¸í½ÃÀûÀ¸·Î ¼³Á¤ÇÏ°í ³ª¸ÓÁö´Â AActorÀÇ ·¹°Å½Ã ¼³Á¤À» È®ÀÎÇÏ¿© ¼³Á¤ÇÕ´Ï´Ù.
+		// FClassReplicationInfoï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½. ï¿½Ì´ï¿½ ï¿½âº»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½. ï¿½ÏºÎ´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ AActorï¿½ï¿½ ï¿½ï¿½ï¿½Å½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.
 		// ------------------------------------------------ ------------------------------------- ------------------------------------- ------------------
 		// ------------------------------------------------ ------------------------------------- ------------------------------------- ------------------
 
@@ -159,8 +158,8 @@ void USoulNetworkReplicationGraph::InitGlobalActorClassSettings()
 
 		UReplicationGraphNode_ActorListFrequencyBuckets::DefaultSettings.ListSize = 12;
 
-		// ¸ðµç Replicated Å¬·¡½ºµéÀ» FClassReplicationInfo¿¡ ÁöÁ¤ÇØ³õ´Â´Ù. //
-		/** º¹Á¦µÈ Å¬·¡½º°¡ ³ëÃâµÇÁö ¾Êµµ·ÏÇÏ´Â ÀÛ¾÷ **/
+		// ï¿½ï¿½ï¿½ Replicated Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ FClassReplicationInfoï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø³ï¿½ï¿½Â´ï¿½. //
+		/** ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Êµï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Û¾ï¿½ **/
 		for (UClass* ReplicatedClass : AllReplicatedClasses)
 		{
 			if (ExplicitySetClasses.FindByPredicate([&](const UClass* SetClass) { return ReplicatedClass->IsChildOf(SetClass); }) != nullptr)
@@ -168,7 +167,7 @@ void USoulNetworkReplicationGraph::InitGlobalActorClassSettings()
 				continue;
 			}
 
-			//const bool bClassIsSpatialized = IsSpatialized(ClassRepNodePolicies.GetChecked(ReplicatedClass));	//¼öÁ¤//
+			//const bool bClassIsSpatialized = IsSpatialized(ClassRepNodePolicies.GetChecked(ReplicatedClass));	//ï¿½ï¿½ï¿½ï¿½//
 
 			FClassReplicationInfo ClassInfo;
 			InitClassReplicationInfo(ClassInfo, ReplicatedClass, true, NetDriver->NetServerMaxTickRate);
@@ -179,26 +178,26 @@ void USoulNetworkReplicationGraph::InitGlobalActorClassSettings()
 
 void USoulNetworkReplicationGraph::InitGlobalGraphNodes()
 {
-	// °øÀ¯ÇÒ ¸ñ·ÏÀ» ¹Ì¸® ÇÒ´çÇÏ´Â ´Ü°è. //
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ ï¿½Ò´ï¿½ï¿½Ï´ï¿½ ï¿½Ü°ï¿½. //
 	PreAllocateRepList(3, 12);
 	PreAllocateRepList(6, 12);
 	PreAllocateRepList(128, 64);
 	PreAllocateRepList(512, 16);
 
-	// ±×¸®µå »ý¼º. //
+	// ï¿½×¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½. //
 	GridNode = CreateNewNode<UReplicationGraphNode_GridSpatialization2D>();
 	GridNode->CellSize = GridCellSize;
 	GridNode->SpatialBias = FVector2D(SpatialBiasX, SpatialBiasY);
 	
 	if (bDisableSpatialRebuilding)
 	{
-		// °ø°£À» Àç±¸ÃàÀ» ¾È ÇÒ°æ¿ì ¿ì¸®°¡ »ç¿ëÁßÀÎ Actor Å¬·¡½ºµé¸¸ Á¦¿Ü ÈÄ Á¤Áö ºñÈ°¼ºÈ­ÇÑ´Ù.
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ç±¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ò°ï¿½ï¿½ ï¿½ì¸®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Actor Å¬ï¿½ï¿½ï¿½ï¿½ï¿½é¸¸ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È°ï¿½ï¿½È­ï¿½Ñ´ï¿½.
 		GridNode->AddSpatialRebuildBlacklistClass(AActor::StaticClass());
 	}
 
 	AddGlobalGraphNode(GridNode);
 
-	// ÀÌ¹Ì ÇØ´çµÈ ³ëµåµéÀ» »ý¼ºÇÑ´Ù. //
+	// ï¿½Ì¹ï¿½ ï¿½Ø´ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½. //
 	AlwaysRelevantNode = CreateNewNode<UReplicationGraphNode_ActorList>();
 	AddGlobalGraphNode(AlwaysRelevantNode);
 }
@@ -209,7 +208,7 @@ void USoulNetworkReplicationGraph::InitConnectionGraphNodes(UNetReplicationGraph
 
 	USoulNetworkReplicationGraphNode_AlwaysRelevant_ForConnection* AlwaysRelevantConnectionNode = CreateNewNode<USoulNetworkReplicationGraphNode_AlwaysRelevant_ForConnection>();
 
-	// ÀÌ ³ëµå´Â Å¬¶óÀÌ¾ðÆ® ·¹º§ÀÌ °¡½Ã¼º¿¡ µé¾î¿À°í ³ª°¡´Â ½Ã±â¸¦ ¾Ë¾Æ¾ß ÇÕ´Ï´Ù. //
+	// ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½Ì¾ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ã±â¸¦ ï¿½Ë¾Æ¾ï¿½ ï¿½Õ´Ï´ï¿½. //
 	ConnectionManager->OnClientVisibleLevelNameAdd.AddUObject(AlwaysRelevantConnectionNode, &USoulNetworkReplicationGraphNode_AlwaysRelevant_ForConnection::OnClientLevelVisibilityAdd);
 	ConnectionManager->OnClientVisibleLevelNameRemove.AddUObject(AlwaysRelevantConnectionNode, &USoulNetworkReplicationGraphNode_AlwaysRelevant_ForConnection::OnClientLevelVisibilityRemove);
 
@@ -351,11 +350,11 @@ void USoulNetworkReplicationGraphNode_AlwaysRelevant_ForConnection::GatherActorL
 
 		if (APlayerControllerBase* PC = Cast<APlayerControllerBase>(CurViewer.InViewer))
 		{
-			// PlayerStates¸¦ 50% Á¦ÇÑÇÕ´Ï´Ù.
+			// PlayerStatesï¿½ï¿½ 50% ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.
 			const bool bReplicatePS = (Params.ConnectionManager.ConnectionOrderNum % 2) == (Params.ReplicationFrameNum % 2);
 			if (bReplicatePS)
 			{
-				// Ç×»ó ÇÃ·¹ÀÌ¾î »óÅÂ¸¦ ¼ÒÀ¯ ÇÃ·¹ÀÌ¾î¿¡°Ô ¹ÝÈ¯ÇÕ´Ï´Ù. ½Ã¹Ä·¹ÀÌ¼ÇµÈ ÇÁ·Ï½Ã ÇÃ·¹ÀÌ¾î »óÅÂ´Â UShooterReplicationGraphNode_PlayerStateFrequencyLimiter¿¡ ÀÇÇØ Ã³¸®µË´Ï´Ù.
+				// ï¿½×»ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½Â¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾î¿¡ï¿½ï¿½ ï¿½ï¿½È¯ï¿½Õ´Ï´ï¿½. ï¿½Ã¹Ä·ï¿½ï¿½Ì¼Çµï¿½ ï¿½ï¿½ï¿½Ï½ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½Â´ï¿½ UShooterReplicationGraphNode_PlayerStateFrequencyLimiterï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½Ë´Ï´ï¿½.
 				if (APlayerState* PS = PC->PlayerState)
 				{
 					if (!bInitializedPlayerState)
@@ -369,7 +368,7 @@ void USoulNetworkReplicationGraphNode_AlwaysRelevant_ForConnection::GatherActorL
 
 				FAlwaysRelevantActorInfo* LastData = PastRelevantActors.FindByKey<UNetConnection*>(CurViewer.Connection);
 
-				// ÀÌÀü¿¡ ÀÌ ¾×ÅÍ¸¦ º» ÀûÀÌ ¾øÀ¸¹Ç·Î Ãß°¡ÇØ º¸¼¼¿ä.
+				// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ ï¿½ß°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
 				if (LastData == nullptr)
 				{
 					FAlwaysRelevantActorInfo NewActorInfo;
@@ -405,7 +404,7 @@ void USoulNetworkReplicationGraphNode_AlwaysRelevant_ForConnection::GatherActorL
 
 	Params.OutGatheredReplicationLists.AddReplicationActorList(ReplicationActorList);
 
-	// Ç×»ó °ü·ÃµÈ ½ºÆ®¸®¹Ö ·¹º§ ¾×ÅÍ.
+	// ï¿½×»ï¿½ ï¿½ï¿½ï¿½Ãµï¿½ ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
 	FPerConnectionActorInfoMap& ConnectionActorInfoMap = Params.ConnectionManager.ActorInfoMap;
 
 	TMap<FName, FActorRepListRefView>& AlwaysRelevantStreamingLevelActors = SoulGraph->AlwaysRelevantStreamingLevelActors;
@@ -417,7 +416,7 @@ void USoulNetworkReplicationGraphNode_AlwaysRelevant_ForConnection::GatherActorL
 		FActorRepListRefView* Ptr = AlwaysRelevantStreamingLevelActors.Find(StreamingLevel);
 		if (Ptr == nullptr)
 		{
-			// ÇØ´ç ·¹º§¿¡ ´ëÇØ Ç×»ó °ü·Ã ÀÖ´Â ¸ñ·ÏÀº ¾ø½À´Ï´Ù.
+			// ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½×»ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.
 			//UE_LOG(CVar_ShooterRepGraph_DisplayClientLevelStreaming > 0, LogSoulReplicationGraph, Display, TEXT("CLIENTSTREAMING Removing %s from AlwaysRelevantStreamingLevelActors because FActorRepListRefView is null. %s "), *StreamingLevel.ToString(), *Params.ConnectionManager.GetName());
 			AlwaysRelevantStreamingLevelsNeedingReplication.RemoveAtSwap(index, 1, false);
 			continue;
